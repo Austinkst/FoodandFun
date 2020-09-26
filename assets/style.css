@@ -1,0 +1,63 @@
+body {
+    background: #ffb553;
+    padding: 2%;
+}
+
+/* HEADER */
+
+#header div {
+    margin-left: -1%;
+}
+
+#header div h1 {
+    color: white;
+    font-size: 600%;
+    margin-bottom: -2.5%;
+}
+
+/* TILES */
+
+.tile:hover {
+    opacity: 1.0;
+}
+
+#location-tile{
+    background:rgba(255,106,0,0.7);
+}
+
+#date-tile {
+    background: rgba(242,33,90,0.7);
+}
+
+#date-tile .subtitle{
+    margin-bottom: 2%;
+}
+
+#data-input {
+    border: none;
+    padding: 1%;
+    margin: 1%;
+}
+
+#food-tile {
+    background: rgba(246,57,60,0.7);
+}
+#weather-tile {
+    background: rgba(250,81,30,0.7);
+    min-height: 150px;
+}
+#events-tile {
+    background: rgba(238,9,121,0.7);
+}
+
+/* BUTTONS */
+
+#location-button {
+    margin-top: 3%;
+}
+
+/* FOOTER */
+
+.footer {
+    background :rgba(250,81,30,0.9) 
+}
