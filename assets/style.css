@@ -17,8 +17,12 @@ body {
 
 /* TILES */
 
-.tile:hover {
-    opacity: 1.0;
+article {
+    border: 0.2rem solid transparent;
+}
+
+article:hover {
+    border: 0.2rem solid #ffb553;
 }
 
 #location-tile{
