@@ -20,47 +20,50 @@
   <div class="tile is-vertical is-8">
     <div class="tile">
       <div class="tile is-parent is-vertical">
-        <article class="tile is-child notification is-warning">
+        <div class="tile is-child box">
           <p class="title">Where do you want to go?</p>
           <input class="input is-rounded" type="text" placeholder="Type the zip code here">
-            <button class="button is-black">Search</button>
-        </article>
-        <article class="tile is-child notification is-danger">
-          <p class="title">...tiles</p>
-          <p class="subtitle">Bottom tile</p>
+            <button class="button is-black"><i class="fas fa-search"></i></button>
+        </div>
+
+        <div class="tile is-child box">
+          <p class="title">Choose a date</p>
+          <p class="subtitle">Use the calender below to pick a day you want to see what is happening around you.</p>
           <input type="date" data-display-mode="inline" data-is-range="true" data-close-on-select="false">
-        </article>
+        </div>
       </div>
+
       <div class="tile is-parent">
-        <article class="tile is-child notification is-danger">
-          <p class="title">Middle tile</p>
+        <div class="tile is-child box">
+          <p class="title">Your Food Truck Options</p>
           <p class="subtitle">With an image</p>
           <figure class="image is-4by3">
             <img src="https://bulma.io/images/placeholders/640x480.png">
           </figure>
-        </article>
+        </div>
       </div>
     </div>
+
     <div class="tile is-parent">
-      <article class="tile is-child notification is-warning">
-        <p class="title">Wide tile</p>
-        <p class="subtitle">Aligned with the right tile</p>
+      <div class="tile is-child box">
+        <p class="title">That Day's Forecast</p>
         <div class="content">
           <!-- Content -->
         </div>
-      </article>
+      </div>
     </div>
   </div>
+
   <div class="tile is-parent">
-    <article class="tile is-child notification is-warning">
+    <div class="tile is-child box">
       <div class="content">
-        <p class="title">Tall tile</p>
+        <p class="title">Events In That Area</p>
         <p class="subtitle">With even more content</p>
         <div class="content">
           <!-- Content -->
         </div>
       </div>
-    </article>
+    </div>
   </div>
 </div>
   
