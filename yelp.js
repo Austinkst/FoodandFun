@@ -17,10 +17,16 @@ $(document).ready(function () {
       headers: {'Authorization': 'Bearer '+yAPI},
       method: 'GET',
     }).then(function (response) {
-      console.log('')
-      console.log('    YELP API RESPONSE    ')
-      console.log(response)
-      console.log('')
+
+        
+        var fName = '';
+        var price = '';
+        var rating = '';
+      console.log('');
+      console.log('    YELP API RESPONSE    ');
+      console.log(response);
+      console.log('');
+      console.log('');
     });
   };
 
