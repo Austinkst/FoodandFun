@@ -12,70 +12,71 @@
   </head>
   <body>
 
-    <!-- HEADER -->
-  <section id="header" class="section">
-    <div class="container">
-      <h1 class="title">food&fun</h1>
-    </div>
-  </section>
+    <div id="main-container">
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="yelp.js"></script>
-</body>
-  <div class="tile is-ancestor">
-  <div class="tile is-vertical is-8">
+      <!-- HEADER -->
+      <section id="header" class="section">
+        <div class="container">
+          <h1 class="title">food&fun</h1>
+        </div>
+      </section>
 
-    <!-- ALL TILESS -->
-    <div class="tile">
+      <div class="tile is-ancestor">
+        <div class="tile is-vertical is-8">
 
-      <div class="tile is-parent is-vertical">
+          <!-- ALL TILESS -->
+          <div class="tile">
 
-          <!-- LOCATION TILE -->
-        <article id="location-tile" class="tile is-child notification is-warning">
-          <p class="title">Where do you want to go?</p>
-          <input class="input is-rounded" type="text" placeholder="Type the zip code here">
-          <button id="location-button" class="button is-white">Search</button>
-        </article>
+            <div class="tile is-parent is-vertical">
 
-        <!-- DATE TILE -->
-        <article id="date-tile" class="tile is-child notification is-danger">
-          <p class="title">When do you wanna go?</p>
-          <p class="subtitle">Pick a data for you day-out</p>
-          <input id="data-input" type="date" data-display-mode="inline" data-is-range="true" data-close-on-select="false">
-        </article>
-      </div>
+                <!-- LOCATION TILE -->
+              <article id="location-tile" class="tile is-child notification is-warning">
+                <p class="title">Where do you want to go?</p>
+                <input class="input is-rounded" type="text" placeholder="Type the zip code here">
+                <button id="location-button" class="button is-white">Search</button>
+              </article>
+
+              <!-- DATE TILE -->
+              <article id="date-tile" class="tile is-child notification is-danger">
+                <p class="title">When do you wanna go?</p>
+                <p class="subtitle">Pick a data for you day-out</p>
+                <input id="data-input" type="date" data-display-mode="inline" data-is-range="true" data-close-on-select="false">
+              </article>
+            </div>
 
 
-      <!-- FOOD TRUCK TILE -->
-      <div class="tile is-parent">
-        <article id="food-tile" class="tile is-child notification is-danger">
-          <div id="food-container">
+            <!-- FOOD TRUCK TILE -->
+            <div class="tile is-parent">
+              <article id="food-tile" class="tile is-child notification is-danger">
+                <div id="food-container">
 
+                </div>
+              </article>
+            </div>
           </div>
-        </article>
-      </div>
-    </div>
 
-    <!-- WEATHER TILE -->
-    <div class="tile is-parent">
-      <article id="weather-tile" class="tile is-child notification is-warning">
-        <div id="weather-container" class="content">
-          
+          <!-- WEATHER TILE -->
+          <div class="tile is-parent">
+            <article id="weather-tile" class="tile is-child notification is-warning">
+              <div id="weather-container" class="content">
+                
+              </div>
+            </article>
+          </div>
         </div>
-      </article>
-    </div>
+
+        <!-- EVENTS TILE -->
+        <div class="tile is-parent">
+          <article id="events-tile" class="tile is-child notification is-warning">
+            <div class="content">
+              <div id="events-container" class="content">
+                
+              </div>
+            </div>
+          </article>
+        </div>
   </div>
 
-  <!-- EVENTS TILE -->
-  <div class="tile is-parent">
-    <article id="events-tile" class="tile is-child notification is-warning">
-      <div class="content">
-        <div id="events-container" class="content">
-          
-        </div>
-      </div>
-    </article>
-  </div>
 </div>
 
 <!-- FOOTER -->
@@ -85,8 +86,11 @@
         <strong>foodAF</strong> by <a href="https://github.com/Austinkst/foodtruckRepo">devAF</a>
     </div>
   </footer>
- <!---Bulma JS-->
+
+
   <script src="~bulma-calendar/dist/js/bulma-calendar.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="yelp.js"></script>
   <script src="script.js"></script>
   </body>
 </html>
