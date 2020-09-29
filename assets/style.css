@@ -17,6 +17,10 @@ body {
 
 /* TILES */
 
+.input is-rounded {
+    margin-right: 50px;
+}
+
 .tile:hover {
     opacity: 1.0;
 }
@@ -52,7 +56,7 @@ body {
 
 /* BUTTONS */
 #location-button {
-    margin-top: 3%;
+    margin-top: 1.5%;
     float: right;
 }
 
