@@ -1,9 +1,12 @@
 body {
     background: #ffb553;
-    padding: 2%;
 }
 
 /* HEADER */
+
+#main-body {
+    padding: 2%;
+}
 
 #header div {
     margin-left: -1%;
@@ -63,5 +66,6 @@ article:hover {
 /* FOOTER */
 
 .footer {
-    background :rgba(250,81,30,0.9) 
+    background :rgba(250,81,30,0.9);
 }
+
