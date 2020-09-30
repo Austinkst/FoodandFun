@@ -12,13 +12,12 @@
   </head>
   <body>
 
-    <div id="main-container">
-
+    <div id="main-body">
       <!-- HEADER -->
       <section id="header" class="section">
-        <div class="container">
-          <h1 class="title">food&fun</h1>
-        </div>
+          <div class="container">
+            <h1 class="title">food<em>&fun</em></h1>
+          </div>
       </section>
 
       <div class="tile is-ancestor">
@@ -29,19 +28,26 @@
 
             <div class="tile is-parent is-vertical">
 
-                <!-- LOCATION TILE -->
+              <!-- LOCATION TILE -->
               <article id="location-tile" class="tile is-child notification is-warning">
-                <p class="title">Where do you want to go?</p>
-                <input class="input is-rounded" type="text" placeholder="Type the zip code here">
-                <button id="location-button" class="button is-white">Search</button>
-              </article>
+              <p class="title">Where do you want to go?</p>
+              <div class="columns">
+                <div class="column is-half">
+                  <input class="input is-rounded" type="text" placeholder="Type the zip code here">
+                </div>
+                <button id="location-button" class="button is-dark"><i class="fas fa-search"></i></button>
+              </div>
+              
+        </article>
+
 
               <!-- DATE TILE -->
               <article id="date-tile" class="tile is-child notification is-danger">
-                <p class="title">When do you wanna go?</p>
-                <p class="subtitle">Pick a data for you day-out</p>
+                <p class="title"><em>When</em> do you wanna go?</p>
+                <p class="subtitle">Pick a date for you outting</p>
                 <input id="data-input" type="date" data-display-mode="inline" data-is-range="true" data-close-on-select="false">
               </article>
+              
             </div>
 
 
@@ -55,15 +61,54 @@
             </div>
           </div>
 
-          <!-- WEATHER TILE -->
-          <div class="tile is-parent">
-            <article id="weather-tile" class="tile is-child notification is-warning">
-              <div id="weather-container" class="content">
-                
-              </div>
-            </article>
+            <!-- WEATHER TILE -->
+            <div class="tile">
+              <article id="weather-tiles" class="tile is-child notification is-warning is-centered">
+                <div id="weather-container" class="is-centered columns is-mobile is-multiline">
+
+                    <!-- TEMEPRATURE TILE -->
+                    <div class="column is-one-quarter weather-tile">
+                      <i class="fas fa-thermometer-half fa-4x"></i>
+                      <p class="bd-notification is-primary">
+                        <strong>High </strong><span id="temp-high"></span> ºF
+                        <strong> | Low </strong><span id="temp-low"></span> ºF
+                      </p>
+                    </div>
+
+                    <!-- CHANGE OF RAIN TILE -->
+                    <div class="column is-one-quarter weather-tile">
+                      <!-- REPLACE SRC WITH WEATHER ICON URL -->
+                      <img id="rain-icon" src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon">
+                      <p class="bd-notification is-primary">
+                        <span id="rain-chance">Chance of Rain</span>
+                      </p>
+                    </div>
+
+                    <!-- HUMIDITY TILE -->
+                    <div class="column is-one-quarter weather-tile">
+                      <i class="fas fa-percent fa-2x"></i>
+                      <p class="bd-notification is-primary">
+                        <strong>Humidity </strong><span id="hum-chance"></span>
+                      </p>
+                    </div>
+
+                    <!-- YES / NO TILE -->
+                    <div class="column is-one-quarter weather-tile">
+                      
+                      <p>Do these conditions sound alright to you?</p>
+
+                      <div class="buttons is-centered">
+                        <button id="yes-button" class="weather-button button is-success">Yes</button>
+                        <button id="no-button" class="weather-button button is-warning">No</button>
+                      </div>
+
+                    </div>
+                  
+                </div>
+              </article>
+            </div>
+            
           </div>
-        </div>
 
         <!-- EVENTS TILE -->
         <div class="tile is-parent">
@@ -75,9 +120,10 @@
             </div>
           </article>
         </div>
-  </div>
 
-</div>
+      </div>
+
+  </div>
 
 <!-- FOOTER -->
   <footer class="footer">
@@ -87,8 +133,8 @@
     </div>
   </footer>
 
-
-  <script src="~bulma-calendar/dist/js/bulma-calendar.min.js"></script>
+ <!---Bulma JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bulma-calendar@6.0.9/dist/js/bulma-calendar.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="yelp.js"></script>
   <script src="script.js"></script>

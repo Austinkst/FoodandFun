@@ -2,11 +2,11 @@ body {
     background: #ffb553;
 }
 
-#main-container {
+/* HEADER */
+
+#main-body {
     padding: 2%;
 }
-
-/* HEADER */
 
 #header div {
     margin-left: -1%;
@@ -26,6 +26,10 @@ article {
 
 article:hover {
     border: 0.2rem solid #ffb553;
+}
+
+#location-tile, #date-tile {
+    max-height: 19.2%;
 }
 
 #location-tile{
@@ -48,13 +52,45 @@ article:hover {
 
 #food-tile {
     background: rgba(246,57,60,0.7);
+    overflow: scroll;
+    max-height: 40%;
 }
-#weather-tile {
+
+.image-url {
+    max-width: 15%;
+    height: auto;
+}
+
+/* WEATHER TILES */
+
+#weather-tiles {
     background: rgba(250,81,30,0.7);
     min-height: 150px;
+    padding:2%;
 }
+
+.weather-tile {
+    text-align: center;
+}
+
+.weather-tile p {
+    margin-top: 4%;
+}
+
+.weather-button {
+    margin-top: 6%;
+}
+
+/* EVENT TILES */
+
 #events-tile {
     background: rgba(238,9,121,0.7);
+    max-height: 45%;
+}
+
+img {
+    height: auto;
+    max-width: 15%;
 }
 
 .image-url {
@@ -71,5 +107,6 @@ article:hover {
 /* FOOTER */
 
 .footer {
-    background :rgba(250,81,30,0.9) 
+    background :rgba(250,81,30,0.9);
 }
+
