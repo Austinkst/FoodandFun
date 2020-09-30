@@ -28,6 +28,9 @@ article:hover {
     border: 0.2rem solid #ffb553;
 }
 
+#location-tile, #date-tile {
+    max-height: 19.2%;
+}
 
 #location-tile{
     background:rgba(255,106,0,0.7);
@@ -50,7 +53,6 @@ article:hover {
 #food-tile {
     background: rgba(246,57,60,0.7);
     overflow: scroll;
-    max-width: 80%;
     max-height: 40%;
 }
 
@@ -83,6 +85,7 @@ article:hover {
 
 #events-tile {
     background: rgba(238,9,121,0.7);
+    max-height: 45%;
 }
 
 img {
