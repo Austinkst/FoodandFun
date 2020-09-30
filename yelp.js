@@ -8,7 +8,8 @@ $(document).ready(function () {
 
     var queryURL = 'https://cors-anywhere.herokuapp.com/api.yelp.com/v3/businesses/search?categories=foodtrucks&latitude=37.569796&longitude=-77.473891';    
     // 37.569796, -77.473891
-    // Food Trucks (foodtrucks, [AR, AT, AU, BE, BR, CA, CH, CL, CZ, DE, DK, ES, FI, FR, GB, HK, IE, IT, JP, MX, MY, NL, NO, NZ, PH, PL, PT, SE, TR, TW, US])
+    // Request URL: https://www.yelp.com/search/snippet?find_desc=food%20trucks&find_loc=23234&parent_request_id=2272938463bdcc9b&request_origin=user
+
     // https://api.yelp.com/v3/autocomplete?text=del&latitude=37.786882&longitude=-122.399972
     
     
@@ -19,14 +20,41 @@ $(document).ready(function () {
     }).then(function (response) {
 
         
-        var fName = '';
-        var price = '';
         var rating = '';
+
       console.log('');
       console.log('    YELP API RESPONSE    ');
       console.log(response);
-      console.log('');
-      console.log('');
+
+      
+      console.log('response.businesses.length:  ', response.businesses.length);
+
+      for (var i=0; i < 5; i++) {
+        console.log("");
+        console.log("Food Truck Name: ", response.businesses[i].name);
+        console.log("Food Truck Display Phone: ", response.businesses[i].display_phone);
+        console.log("Food Truck Phone: ", response.businesses[i].phone);
+        console.log("Food Truck Price: ", response.businesses[i].price);
+        console.log("Food Truck Rating: ", response.businesses[i].rating);
+        console.log("Food Truck URL: ", response.businesses[i].url);
+        console.log("Food Truck Image: ", response.businesses[i].image_url);
+        console.log("");
+         
+        var fName = $("<h2 class='truck-name'>").text(response.businesses[i].name);
+        var fDPhone = $("<h2 class='display-phone'>").text(response.businesses[i].display_phone);
+        var fPhone = $("<h2 class='phone'>").text(response.businesses[i].phone);
+        var fPrice = $("<h2 class='price'>").text(response.businesses[i].price);
+        var fRating = $("<h2 class='rating'>").text(response.businesses[i].rating);
+        var fURL = $("<h2 class='url'>").text(response.businesses[i].url);
+        var fImage = $("<img class='image-url' style='height:auto max-width: 10%'>");
+        fImage.attr("src",response.businesses[i].image_url);
+
+
+
+
+        $("#food-container").append(fName, fDPhone, fPhone, fPrice, fRating, fImage, fURL);
+
+      }
     });
   };
 
