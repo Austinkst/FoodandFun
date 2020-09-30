@@ -20,8 +20,6 @@ $(document).ready(function () {
     }).then(function (response) {
 
         
-        var rating = '';
-
       console.log('');
       console.log('    YELP API RESPONSE    ');
       console.log(response);
@@ -45,24 +43,41 @@ $(document).ready(function () {
         var fPhone = $("<h2 class='phone'>").text(response.businesses[i].phone);
         var fPrice = $("<h2 class='price'>").text(response.businesses[i].price);
         var fRating = $("<h2 class='rating'>").text(response.businesses[i].rating);
-        var fURL = $("<h2 class='url'>").text(response.businesses[i].url);
-        var fImage = $("<img class='image-url' style='height:auto max-width: 10%'>");
+        var fURL = $(`<h2 class='url'><a href='${(response.businesses[i].url)}'>${(response.businesses[i].name)} on Yelp</a></h2>`);
+        var fImage = $("<img class='image-url'>");
         fImage.attr("src",response.businesses[i].image_url);
 
 
 
 
-        $("#food-container").append(fName, fDPhone, fPhone, fPrice, fRating, fImage, fURL);
+        $("#food-container").append(fName, fDPhone, fPhone, fPrice, fRating, fImage, fURL,$("<hr>"));
 
-      }
+      };
     });
   };
 
+  function ticketMaster (){
+    var zipCode = "23230";
+    var tmAPIKey = "AGkOY0wMobADkzojimRidw5t9aAPnU7k";
+    var queryURL = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${(tmAPIKey)}`; // search all
+    var queryURL = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${(tmAPIKey)}&postalCode=${(zipCode)}`; // doesn't work
 
+  
+    console.log(queryURL);
+    $.ajax({
+      url: queryURL,
+      method: 'GET',
+    }).then(function (response) {
 
+      console.log("");
+      console.log(response);
+      console.log("");
 
+    });
 
+  };
 
+  ticketMaster();
 
   yelAPI();
 });
