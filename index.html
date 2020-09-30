@@ -28,7 +28,7 @@
 
             <div class="tile is-parent is-vertical">
 
-                <!-- LOCATION TILE -->
+              <!-- LOCATION TILE -->
               <article id="location-tile" class="tile is-child notification is-warning">
                 <p class="title"><em>Where</em> do you wanna go?</p>
                 <input class="input is-rounded" type="text" placeholder="Type the zip code here">
@@ -41,6 +41,7 @@
                 <p class="subtitle">Pick a date for you outting</p>
                 <input id="data-input" type="date" data-display-mode="inline" data-is-range="true" data-close-on-select="false">
               </article>
+              
             </div>
 
 
@@ -71,7 +72,7 @@
                     <!-- CHANGE OF RAIN TILE -->
                     <div class="column is-one-quarter weather-tile">
                       <!-- REPLACE SRC WITH WEATHER ICON URL -->
-                      <img src="" alt="weather-icon">
+                      <img id="rain-icon" src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon">
                       <p class="bd-notification is-primary">
                         <span id="rain-chance">Chance of Rain</span>
                       </p>
@@ -79,7 +80,7 @@
 
                     <!-- HUMIDITY TILE -->
                     <div class="column is-one-quarter weather-tile">
-                      <i class="fas fa-percent fa-3x"></i>
+                      <i class="fas fa-percent fa-2x"></i>
                       <p class="bd-notification is-primary">
                         <strong>Humidity </strong><span id="hum-chance"></span>
                       </p>
@@ -90,9 +91,9 @@
                       
                       <p>Do these conditions sound alright to you?</p>
 
-                      <div class="column is-centered">
-                        <button id="yes-button" class="column is-full">Yes</button>
-                        <button id="no-button" class="column is-full">No</button>
+                      <div class="buttons is-centered">
+                        <button id="yes-button" class="weather-button button is-success">Yes</button>
+                        <button id="no-button" class="weather-button button is-warning">No</button>
                       </div>
 
                     </div>
