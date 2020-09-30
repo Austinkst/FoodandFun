@@ -12,6 +12,7 @@
   </head>
   <body>
 
+<<<<<<< HEAD
     <div id="main-container">
 
       <!-- HEADER -->
@@ -19,6 +20,14 @@
         <div class="container">
           <h1 class="title">food&fun</h1>
         </div>
+=======
+    <div id="main-body">
+      <!-- HEADER -->
+      <section id="header" class="section">
+          <div class="container">
+            <h1 class="title">food&fun</h1>
+          </div>
+>>>>>>> css_framework
       </section>
 
       <div class="tile is-ancestor">
@@ -55,15 +64,54 @@
             </div>
           </div>
 
-          <!-- WEATHER TILE -->
-          <div class="tile is-parent">
-            <article id="weather-tile" class="tile is-child notification is-warning">
-              <div id="weather-container" class="content">
-                
-              </div>
-            </article>
+            <!-- WEATHER TILE -->
+            <div class="tile">
+              <article id="weather-tile" class="tile is-child notification is-warning is-centered">
+                <div id="weather-container" class="is-centered columns is-mobile is-multiline">
+
+                    <!-- TEMEPRATURE TILE -->
+                    <div class="column is-one-quarter">
+                      <i class="fas fa-thermometer-half fa-4x"></i>
+                      <p class="bd-notification is-primary">
+                        <strong>High </strong><span id="temp-high"></span> ºF
+                        <strong> | Low </strong><span id="temp-low"></span> ºF
+                      </p>
+                    </div>
+
+                    <!-- CHANGE OF RAIN TILE -->
+                    <div class="column is-one-quarter">
+                      <!-- REPLACE SRC WITH WEATHER ICON URL -->
+                      <img src="" alt="weather-icon">
+                      <pclass="bd-notification is-primary">
+                        <span id="rain-chance">Chance of Rain</span>
+                      </p>
+                    </div>
+
+                    <!-- HUMIDITY TILE -->
+                    <div class="column is-one-quarter">
+                      <i class="fas fa-percent fa-3x"></i>
+                      <p class="bd-notification is-primary">
+                        <strong>Humidity </strong><span id="hum-chance"></span>
+                      </p>
+                    </div>
+
+                    <!-- YES / NO TILE -->
+                    <div class="column is-one-quarter ">
+                      
+                      <p>Do these conditions sound alright to you?</p>
+
+                      <div class="column">
+                        <button id="yes-button" class="collumn is-half">Yes</button>
+                        <button id="no-button" class="collumn is-half">No</button>
+                      </div>
+
+                    </div>
+                  
+                </div>
+              </article>
+            </div>
+            
           </div>
-        </div>
 
         <!-- EVENTS TILE -->
         <div class="tile is-parent">
@@ -75,9 +123,10 @@
             </div>
           </article>
         </div>
-  </div>
 
-</div>
+      </div>
+
+  </div>
 
 <!-- FOOTER -->
   <footer class="footer">
@@ -87,7 +136,7 @@
     </div>
   </footer>
 
-
+ <!---Bulma JS-->
   <script src="~bulma-calendar/dist/js/bulma-calendar.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="yelp.js"></script>
