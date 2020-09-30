@@ -1,12 +1,5 @@
 body {
     background: #ffb553;
-<<<<<<< HEAD
-}
-
-#main-container {
-    padding: 2%;
-=======
->>>>>>> css_framework
 }
 
 /* HEADER */
@@ -55,11 +48,19 @@ article:hover {
 
 #food-tile {
     background: rgba(246,57,60,0.7);
+    overflow: scroll;
 }
-#weather-tile {
+#weather-tiles {
     background: rgba(250,81,30,0.7);
     min-height: 150px;
 }
+
+.weather-tile {
+    text-align: center;
+    padding-top: 3%;
+    padding-bottom: 0.5%;
+}
+
 #events-tile {
     background: rgba(238,9,121,0.7);
 }
