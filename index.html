@@ -46,11 +46,10 @@
 
             <!-- FOOD TRUCK TILE -->
             <div class="tile is-parent">
-              <article id="food-tile" class="tile is-child notification is-danger">
+              <article id="food-tile" class="tile is-child notification is-danger columns is-multiline is-mobile">
                 <div id="food-container">
 
-
-
+                  
                 </div>
               </article>
             </div>
@@ -58,26 +57,47 @@
           </div>
 
             <!-- WEATHER TILE -->
-            <div class="tile is-parent">
-              <article id="weather-tile" class="tile is-child notification is-warning">
-                <div id="weather-container" class="content">
+            <div class="tile">
+              <article id="weather-tile" class="tile is-child notification is-warning is-centered">
+                <div id="weather-container" class="is-centered columns is-mobile is-multiline">
 
-                  <div class="card">
-                    <div class="card-image">
-                      <figure class="image">
-                        <i class="fas fa-thermometer-half"></i>
-                      </figure>
+                    <!-- TEMEPRATURE TILE -->
+                    <div class="column is-one-quarter">
+                      <i class="fas fa-thermometer-half fa-4x"></i>
+                      <p class="bd-notification is-primary">
+                        <strong>High </strong><span id="temp-high"></span> ºF
+                        <strong> | Low </strong><span id="temp-low"></span> ºF
+                      </p>
                     </div>
-                    <div class="card-content">
-                      <div class="media">
-                        
-                      </div>
-                  
-                      <div class="content">
-                          <p><strong>High </strong><span id="temp-high"></span><strong> | Low </strong><span id="temp-low"></span></p>
-                      </div>
+
+                    <!-- CHANGE OF RAIN TILE -->
+                    <div class="column is-one-quarter">
+                      <!-- REPLACE SRC WITH WEATHER ICON URL -->
+                      <img src="" alt="weather-icon">
+                      <pclass="bd-notification is-primary">
+                        <span id="rain-chance">Chance of Rain</span>
+                      </p>
                     </div>
-                  </div>
+
+                    <!-- HUMIDITY TILE -->
+                    <div class="column is-one-quarter">
+                      <i class="fas fa-percent fa-3x"></i>
+                      <p class="bd-notification is-primary">
+                        <strong>Humidity </strong><span id="hum-chance"></span>
+                      </p>
+                    </div>
+
+                    <!-- YES / NO TILE -->
+                    <div class="column is-one-quarter ">
+                      
+                      <p>Do these conditions sound alright to you?</p>
+
+                      <div class="column">
+                        <button id="yes-button" class="collumn is-half">Yes</button>
+                        <button id="no-button" class="collumn is-half">No</button>
+                      </div>
+
+                    </div>
                   
                 </div>
               </article>
