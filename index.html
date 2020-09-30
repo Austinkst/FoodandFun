@@ -16,7 +16,7 @@
       <!-- HEADER -->
       <section id="header" class="section">
           <div class="container">
-            <h1 class="title">food&fun</h1>
+            <h1 class="title">food<em>&fun</em></h1>
           </div>
       </section>
 
@@ -30,15 +30,15 @@
 
                 <!-- LOCATION TILE -->
               <article id="location-tile" class="tile is-child notification is-warning">
-                <p class="title">Where do you want to go?</p>
+                <p class="title"><em>Where</em> do you wanna go?</p>
                 <input class="input is-rounded" type="text" placeholder="Type the zip code here">
                 <button id="location-button" class="button is-white">Search</button>
               </article>
 
               <!-- DATE TILE -->
               <article id="date-tile" class="tile is-child notification is-danger">
-                <p class="title">When do you wanna go?</p>
-                <p class="subtitle">Pick a data for you day-out</p>
+                <p class="title"><em>When</em> do you wanna go?</p>
+                <p class="subtitle">Pick a date for you outting</p>
                 <input id="data-input" type="date" data-display-mode="inline" data-is-range="true" data-close-on-select="false">
               </article>
             </div>
@@ -58,11 +58,11 @@
 
             <!-- WEATHER TILE -->
             <div class="tile">
-              <article id="weather-tile" class="tile is-child notification is-warning is-centered">
+              <article id="weather-tiles" class="tile is-child notification is-warning is-centered">
                 <div id="weather-container" class="is-centered columns is-mobile is-multiline">
 
                     <!-- TEMEPRATURE TILE -->
-                    <div class="column is-one-quarter">
+                    <div class="column is-one-quarter weather-tile">
                       <i class="fas fa-thermometer-half fa-4x"></i>
                       <p class="bd-notification is-primary">
                         <strong>High </strong><span id="temp-high"></span> ºF
@@ -71,16 +71,16 @@
                     </div>
 
                     <!-- CHANGE OF RAIN TILE -->
-                    <div class="column is-one-quarter">
+                    <div class="column is-one-quarter weather-tile">
                       <!-- REPLACE SRC WITH WEATHER ICON URL -->
                       <img src="" alt="weather-icon">
-                      <pclass="bd-notification is-primary">
+                      <p class="bd-notification is-primary">
                         <span id="rain-chance">Chance of Rain</span>
                       </p>
                     </div>
 
                     <!-- HUMIDITY TILE -->
-                    <div class="column is-one-quarter">
+                    <div class="column is-one-quarter weather-tile">
                       <i class="fas fa-percent fa-3x"></i>
                       <p class="bd-notification is-primary">
                         <strong>Humidity </strong><span id="hum-chance"></span>
@@ -88,13 +88,13 @@
                     </div>
 
                     <!-- YES / NO TILE -->
-                    <div class="column is-one-quarter ">
+                    <div class="column is-one-quarter weather-tile">
                       
                       <p>Do these conditions sound alright to you?</p>
 
-                      <div class="column">
-                        <button id="yes-button" class="collumn is-half">Yes</button>
-                        <button id="no-button" class="collumn is-half">No</button>
+                      <div class="column is-centered">
+                        <button id="yes-button" class="column is-full">Yes</button>
+                        <button id="no-button" class="column is-full">No</button>
                       </div>
 
                     </div>
