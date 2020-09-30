@@ -3,11 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Food AF</title>
+    <title>foodAF</title>
     <!--Bulma-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+
     <!--Bulma Calender-->
     <link href="https://cdn.jsdelivr.net/npm/bulma-calendar@6.0.9/dist/css/bulma-calendar.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/style.css">
@@ -28,6 +29,31 @@
 
         <!-- LOCATION TILE -->
         <article id="location-tile" class="tile is-child notification is-warning">
+
+    <link rel="stylesheet" href="./assets/style.css">
+  </head>
+  <body>
+
+    <div id="main-container">
+
+      <!-- HEADER -->
+      <section id="header" class="section">
+        <div class="container">
+          <h1 class="title">food&fun</h1>
+        </div>
+      </section>
+
+      <div class="tile is-ancestor">
+        <div class="tile is-vertical is-8">
+
+          <!-- ALL TILESS -->
+          <div class="tile">
+
+            <div class="tile is-parent is-vertical">
+
+                <!-- LOCATION TILE -->
+              <article id="location-tile" class="tile is-child notification is-warning">
+
           <p class="title">Where do you want to go?</p>
           <div class="columns">
             <div class="column is-half">
@@ -35,6 +61,7 @@
             </div>
             <button id="location-button" class="button is-dark"><i class="fas fa-search"></i></button>
           </div>
+
         </article>
 
         <!-- DATE TILE -->
@@ -71,11 +98,53 @@
       <div class="content">
         <div id="events-container" class="content">
           
+
+        </article>
+
+              <!-- DATE TILE -->
+              <article id="date-tile" class="tile is-child notification is-danger">
+                <p class="title">When do you wanna go?</p>
+                <p class="subtitle">Pick a data for you day-out</p>
+                <input id="data-input" type="date" data-display-mode="inline" data-is-range="true" data-close-on-select="false">
+              </article>
+            </div>
+
+
+            <!-- FOOD TRUCK TILE -->
+            <div class="tile is-parent">
+              <article id="food-tile" class="tile is-child notification is-danger">
+                <div id="food-container">
+
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- WEATHER TILE -->
+          <div class="tile is-parent">
+            <article id="weather-tile" class="tile is-child notification is-warning">
+              <div id="weather-container" class="content">
+                
+              </div>
+            </article>
+          </div>
         </div>
-      </div>
-    </article>
+
+        <!-- EVENTS TILE -->
+        <div class="tile is-parent">
+          <article id="events-tile" class="tile is-child notification is-warning">
+            <div class="content">
+              <div id="events-container" class="content">
+                
+              </div>
+            </div>
+          </article>
+
+        </div>
   </div>
+
 </div>
+
 
   
   <!-- FOOTER -->
@@ -86,6 +155,19 @@
   </footer>
  <!---Bulma JS-->
   <script src="https://cdn.jsdelivr.net/npm/bulma-calendar@6.0.9/dist/js/bulma-calendar.min.js"></script>
+
+<!-- FOOTER -->
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>foodAF</strong> by <a href="https://github.com/Austinkst/foodtruckRepo">devAF</a>
+    </div>
+  </footer>
+
+
+  <script src="~bulma-calendar/dist/js/bulma-calendar.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
   <script src="yelp.js"></script>
   <script src="script.js"></script>
   </body>

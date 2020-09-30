@@ -1,6 +1,9 @@
 body {
     background: #ffb553;
-    padding: 2%;
+}
+
+#main-container {
+   padding: 2%;
 }
 
 /* HEADER */
@@ -20,9 +23,15 @@ body {
 .input is-rounded {
     margin-right: 50px;
 }
-
 .tile:hover {
     opacity: 1.0;
+  
+article {
+    border: 0.2rem solid transparent;
+}
+
+article:hover {
+    border: 0.2rem solid #ffb553;
 }
 
 #location-tile{
@@ -58,6 +67,9 @@ body {
 #location-button {
     margin-top: 1.5%;
     float: right;
+
+#location-button {
+    margin-top: 3%;
 }
 
 /* FOOTER */
@@ -65,3 +77,7 @@ body {
 .footer {
     background :rgba(250,81,30,0.9);
 }
+
+    background :rgba(250,81,30,0.9) 
+}
+
