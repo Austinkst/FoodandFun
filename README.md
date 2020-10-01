@@ -1,1 +1,1 @@
-Austinkst.github.io/foodtruckRepo
+https://austinkst.github.io/foodtruckRepo
