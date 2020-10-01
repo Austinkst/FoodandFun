@@ -67,6 +67,16 @@ article:hover {
     height: auto;
 }
 
+.truck-name {
+    font-weight: 800;
+    letter-spacing: 0.1rem;
+}
+
+#food-truck .image-url {
+    max-width: 175px;
+    border-radius: 3%;
+}
+
 /* WEATHER TILES */
 
 #weather-tiles {
@@ -86,6 +96,11 @@ article:hover {
 .weather-button {
     margin-top: 6%;
 }
+
+#weather-tiles i {
+    margin-top: 5%;
+}
+
 
 /* EVENT TILES */
 
