@@ -31,7 +31,7 @@ article:hover {
 /* LOCATION TILE */
 
 #location-tile, #date-tile {
-    max-height: 300px;
+    max-height: 200px;
 }
 
 #location-tile{
@@ -59,6 +59,7 @@ article:hover {
 #food-tile {
     background: rgba(246,57,60,0.7);
     overflow: scroll;
+    max-height: 400px;
 }
 
 .image-url {
@@ -70,9 +71,8 @@ article:hover {
 
 #weather-tiles {
     background: rgba(250,81,30,0.7);
-    min-height: 150px;
+    max-height: 300px;
     padding:2%;
-    width: 100%;
 }
 
 .weather-tile {
@@ -91,7 +91,7 @@ article:hover {
 
 #events-tile {
     background: rgba(238,9,121,0.7);
-    max-height: 45%;
+    max-height: 1000px;
 }
 
 img {
