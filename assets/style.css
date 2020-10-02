@@ -93,7 +93,7 @@ p {
     font-size: 125%;
 }
 
-#food-truck-image {
+#food-truck-image{
     max-width: 175px;
     margin: 1.5%;
     padding: 0%;
@@ -150,8 +150,8 @@ p {
 }
 
 img {
-    height: auto;
-    max-width: 15%;
+    height: 50%;
+    max-width: 50%;
 }
 
 /* BUTTONS */
