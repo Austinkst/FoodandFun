@@ -1,24 +1,32 @@
 body {
     background: #ffb553;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.04rem;
+}
+
+p {
+    font-weight: 300;
 }
 
 /* HEADER */
 
-#main-body {
-    padding: 2%;
-}
-
 #header div {
-    margin-left: -1%;
+    margin-left: -0.5%;
 }
 
 #header div h1 {
     color: white;
     font-size: 600%;
-    margin-bottom: -2.5%;
+    font-weight: 300;
+    margin-bottom: -4.5%;
+    text-align: left;
 }
 
 /* TILES */
+
+#main-body, #header {
+    padding: 2%;
+}
 
 article {
     border: 0.2rem solid transparent;
@@ -26,6 +34,10 @@ article {
 
 article:hover {
     border: 0.2rem solid #ffb553;
+}
+
+.title {
+    font-weight: 400;
 }
 
 /* LOCATION TILE */
@@ -95,6 +107,7 @@ article:hover {
 
 .weather-button {
     margin-top: 6%;
+
 }
 
 #weather-tiles i {
@@ -113,11 +126,6 @@ img {
     height: auto;
     max-width: 15%;
 }
-
-/* .image-url {
-    height: auto;
-    max-width: 15%;
-} */
 
 /* BUTTONS */
 
