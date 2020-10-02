@@ -72,6 +72,12 @@ article:hover {
     background: rgba(246,57,60,0.7);
     overflow: scroll;
     max-height: 400px;
+    padding: 2%;
+}
+
+#food-container {
+    justify-content: space-between;
+    margin: 0.5% -2.5% 0.5% 0%;
 }
 
 .image-url {
@@ -82,12 +88,21 @@ article:hover {
 .truck-name {
     font-weight: 800;
     letter-spacing: 0.1rem;
+    font-size: 125%;
 }
 
-#food-truck .image-url {
+#food-truck-image {
     max-width: 175px;
-    border-radius: 3%;
+    margin: 1.5%;
+    padding: 0%;
 }
+
+.image-url {
+    border-radius: 3%;
+    padding: 0%;
+}
+
+
 
 /* WEATHER TILES */
 
