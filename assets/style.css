@@ -119,11 +119,12 @@ article:hover {
 
 .weather-tile {
     text-align: center;
-    padding: 0% 0% 1% 0%;
+    padding: 0% 1% 1.5% 1%;
 }
 
 .weather-tile p {
     margin-top: 4%;
+    font-size: 115%;
 }
 
 .weather-button {
@@ -133,6 +134,8 @@ article:hover {
 
 #weather-tiles i {
     margin-top: 7%;
+    font-size: 400%;
+    color: rgba(41, 33, 33, 0.459);
 }
 
 
