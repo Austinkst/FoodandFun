@@ -51,10 +51,10 @@ $(document).ready(function () {
         var fRating = $(`<i class="fas fa-star">  ${(response.businesses[i].rating)}</i>`);
         var fURL = $(`<h2 class='url'><a href='${(response.businesses[i].url)}' target="_blank">Look on Yelp</a></h2>`);
         
-        
         var fImage = $("<img class='image-url'>");
         fImage.attr("src",response.businesses[i].image_url);
-        foodTruckInfo.append(fName, fDPhone, fRating, fURL);
+
+        foodTruckInfo.append(fName, fDPhone, fRating, fURL, fImage);
         foodTruckImage.append(fImage);
 
         fContainer.append(foodTruckInfo, foodTruckImage);
@@ -62,8 +62,6 @@ $(document).ready(function () {
       };
       ticketMaster(stateCity);
     });
-
-
   };
 
 
@@ -100,19 +98,21 @@ $(document).ready(function () {
         console.log("TM Event Venue: ", events[i]._embedded.venues[0].name);
         console.log("TM Event Venue Address: ", events[i]._embedded.venues[0].address.line1);
         console.log("TM Event Venue URL: ", events[i]._embedded.venues[0].url);
+        console.log("TM Event Image: ", events[i].images[0].url);
         console.log("");
-        console.log('');
 
         var eventInfo = $("<div id='event' class='column is-half'>");
-        var eventImage = $("<div id='event-image' class='column is-half'>");
+        var eName = $("<h2 class='event-name'>").text(events[i].name);
+        var eURL = $(`<h2 class='url'><a href='${(events[i].url)}' target='_blank'>Event Info</a></h2>`);
+        var eVenue = $("<h2 class='event-venue'>").text(events[i]._embedded.venues[0].name);
+        var eAddress =$("<h2 class='event-address'>").text(events[i]._embedded.venues[0].address.line1);
+        var vURL =  `<h2 class='url'><a href='${(events[i]._embedded.venues[0].url)}' target='_blank'>Venue Info</a></h2>`;
 
-        var eName = $("<h2 class='event-name").text(events[i].name);
+        var eventImage = $("<img id='event-image' class='column is-half'>");
+        eventImage.attr("src",events[i].images[0].url);
 
-
-        eventInfo.append(eName);
-
-
-        eContainer.append(eventInfo);
+        eventInfo.append(eName, eURL, eVenue, eAddress, vURL);
+        eContainer.append(eventInfo, eventImage);
 
 
 
@@ -122,19 +122,6 @@ $(document).ready(function () {
 
 
   };
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   //// Event listener for the zip code search butotn \\\\
   $("#location-button").on("click", function(event){
