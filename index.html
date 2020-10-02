@@ -49,14 +49,12 @@
                 <button id="location-button" class="button is-dark" type="submit"><i class="fas fa-search"></i></button>
               </div>
             </form>
-              
               </article>
-
 
               <!-- DATE TILE -->
               <article id="date-tile" class="tile is-child notification is-danger">
                 <p class="title"><em style="font-weight: 600">When</em> do you wanna go?</p>
-                <p class="subtitle">Pick a date for you outting</p>
+                <p class="subtitle">Pick a date for your outting</p>
                 <input id="data-input" type="date" data-display-mode="inline" data-is-range="true" data-close-on-select="false">
               </article>
               
@@ -64,7 +62,7 @@
 
 
             <!-- FOOD TRUCK TILE -->
-            <div class="tile is-parent">
+            <div id="food-wrap" class="tile is-parent">
               <article id="food-tile" class="tile is-child notification is-danger">
                 <div id="food-container">
 
@@ -92,7 +90,7 @@
                       <!-- REPLACE SRC WITH WEATHER ICON URL -->
                       <i class="fas fa-cloud-rain fa-3x"></i>
                       <p class="bd-notification is-primary">
-                        <span id="rain-chance">Chance of Rain</span>
+                        <strong>Chance of Rain</strong> <span id="rain-chance"></span>
                       </p>
                     </div>
 
@@ -104,16 +102,12 @@
                       </p>
                     </div>
 
-                    <!-- YES / NO TILE -->
+                    <!-- UV TILE -->
                     <div class="column is-one-quarter weather-tile">
-                      
-                      <p>Do these conditions sound alright to you?</p>
-
-                      <div id="response-buttons" class="buttons is-centered">
-                        <button id="yes-button" class="weather-button button is-success">Yep</button>
-                        <button id="no-button" class="weather-button button is-warning">Nah</button>
-                      </div>
-
+                      <i class="far fa-sun fa-3x"></i>
+                      <p class="bd-notification is-primary">
+                        <strong>UV Index </strong><span id="uv-index"></span>
+                      </p>
                     </div>
                   
                 </div>
@@ -123,7 +117,7 @@
           </div>
 
         <!-- EVENTS TILE -->
-        <div class="tile is-parent">
+        <div id="event-wrap" class="tile is-parent">
           <article id="events-tile" class="tile is-child notification is-warning">
             <div class="content">
               <div id="events-container" class="content">
@@ -141,7 +135,7 @@
   <footer class="footer">
     <div class="content has-text-centered">
       <p>
-        <strong>foodAF</strong> by <a href="https://github.com/Austinkst/foodtruckRepo">devAF</a>
+        <strong>foodAF</strong> by <a href="https://github.com/Austinkst/foodtruckRepo" target="_blank">devAF</a>
     </div>
   </footer>
 

@@ -1,5 +1,5 @@
 body {
-    background: #ffb553;
+    background-image: url('./images/food-background.jpg');
     font-family: 'Roboto', sans-serif;
     letter-spacing: 0.04rem;
 }
@@ -15,7 +15,7 @@ p {
 }
 
 #header div h1 {
-    color: white;
+    color: #afab71;
     font-size: 600%;
     font-weight: 300;
     margin-bottom: -4.5%;
@@ -24,20 +24,17 @@ p {
 
 /* TILES */
 
+.tile .is-child{
+    box-shadow: 9px 10px 8px #c2be80;
+}
+
 #main-body, #header {
     padding: 2%;
 }
 
-article {
-    border: 0.2rem solid transparent;
-}
-
-article:hover {
-    border: 0.2rem solid #ffb553;
-}
 
 .title {
-    font-weight: 400;
+    font-weight: 300;
 }
 
 /* LOCATION TILE */
@@ -47,17 +44,18 @@ article:hover {
 }
 
 #location-tile{
-    background:rgba(255,106,0,0.7);
+    background: #fab73ad5;
 }
 
 /* DATE TILE */
 
 #date-tile {
-    background: rgba(242,33,90,0.7);
+    background: #bcb985d5;
 }
 
 #date-tile .subtitle {
     margin-bottom: 2%;
+    font-weight: 300;
 }
 
 #data-input {
@@ -68,41 +66,62 @@ article:hover {
 
 /* FOOD TRUCK TILE */
 
+#food-wrap {
+    padding-right: 0%;
+}
+
 #food-tile {
-    background: rgba(246,57,60,0.7);
+    background: #ffd357d5;
     overflow: scroll;
     max-height: 400px;
+    padding: 2%;
+}
+
+#food-container {
+    justify-content: space-between;
+    margin: 0.5% -2.5% 0.5% 0%;
 }
 
 .image-url {
-    max-width: 70%;
+    max-width: 90%;
     height: auto;
 }
 
 .truck-name {
     font-weight: 800;
     letter-spacing: 0.1rem;
+    font-size: 125%;
 }
 
-#food-truck .image-url {
+#food-truck-image {
     max-width: 175px;
-    border-radius: 3%;
+    margin: 1.5%;
+    padding: 0%;
 }
+
+.image-url {
+    border-radius: 3%;
+    padding: 0%;
+}
+
+
 
 /* WEATHER TILES */
 
 #weather-tiles {
-    background: rgba(250,81,30,0.7);
+    background: #fab73ad5;
     max-height: 300px;
-    padding:2%;
+    padding: 1%;
 }
 
 .weather-tile {
     text-align: center;
+    padding: 0% 1% 1.5% 1%;
 }
 
 .weather-tile p {
     margin-top: 4%;
+    font-size: 115%;
 }
 
 .weather-button {
@@ -111,15 +130,23 @@ article:hover {
 }
 
 #weather-tiles i {
-    margin-top: 5%;
+    margin-top: 7%;
+    font-size: 400%;
+    color: rgba(0, 0, 0, 0.582);
 }
 
 
 /* EVENT TILES */
 
+#event-wrap {
+    padding-bottom: 0%;
+    padding-left: 1%;
+}
+
 #events-tile {
-    background: rgba(238,9,121,0.7);
-    max-height: 1000px;
+    background: #bcb985d5;
+    max-height:  100%;
+    margin-bottom: 0%;
 }
 
 img {
@@ -136,6 +163,5 @@ img {
 /* FOOTER */
 
 .footer {
-    background :rgba(250,81,30,0.9);
+    background :#ffd257e5;
 }
-
