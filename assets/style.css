@@ -24,6 +24,10 @@ p {
 
 /* TILES */
 
+.tile .is-child{
+    box-shadow: 9px 10px 8px #f59b24;
+}
+
 #main-body, #header {
     padding: 2%;
 }
@@ -37,7 +41,7 @@ article:hover {
 }
 
 .title {
-    font-weight: 400;
+    font-weight: 300;
 }
 
 /* LOCATION TILE */
@@ -58,6 +62,7 @@ article:hover {
 
 #date-tile .subtitle {
     margin-bottom: 2%;
+    font-weight: 300;
 }
 
 #data-input {
@@ -109,11 +114,12 @@ article:hover {
 #weather-tiles {
     background: rgba(250,81,30,0.7);
     max-height: 300px;
-    padding:2%;
+    padding: 1%;
 }
 
 .weather-tile {
     text-align: center;
+    padding: 0% 0% 1% 0%;
 }
 
 .weather-tile p {
@@ -126,7 +132,7 @@ article:hover {
 }
 
 #weather-tiles i {
-    margin-top: 5%;
+    margin-top: 7%;
 }
 
 
