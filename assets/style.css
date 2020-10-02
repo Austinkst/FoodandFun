@@ -1,5 +1,5 @@
 body {
-    background: #ffb553;
+    background-image: url('./images/food-background.jpg');
     font-family: 'Roboto', sans-serif;
     letter-spacing: 0.04rem;
 }
@@ -15,7 +15,7 @@ p {
 }
 
 #header div h1 {
-    color: white;
+    color: #afab71;
     font-size: 600%;
     font-weight: 300;
     margin-bottom: -4.5%;
@@ -25,20 +25,13 @@ p {
 /* TILES */
 
 .tile .is-child{
-    box-shadow: 9px 10px 8px #f59b24;
+    box-shadow: 9px 10px 8px #c2be80;
 }
 
 #main-body, #header {
     padding: 2%;
 }
 
-article {
-    border: 0.2rem solid transparent;
-}
-
-article:hover {
-    border: 0.2rem solid #ffb553;
-}
 
 .title {
     font-weight: 300;
@@ -51,13 +44,13 @@ article:hover {
 }
 
 #location-tile{
-    background:rgba(255,106,0,0.7);
+    background: #fab73ad5;
 }
 
 /* DATE TILE */
 
 #date-tile {
-    background: rgba(242,33,90,0.7);
+    background: #bcb985d5;
 }
 
 #date-tile .subtitle {
@@ -73,8 +66,12 @@ article:hover {
 
 /* FOOD TRUCK TILE */
 
+#food-wrap {
+    padding-right: 0%;
+}
+
 #food-tile {
-    background: rgba(246,57,60,0.7);
+    background: #ffd357d5;
     overflow: scroll;
     max-height: 400px;
     padding: 2%;
@@ -112,7 +109,7 @@ article:hover {
 /* WEATHER TILES */
 
 #weather-tiles {
-    background: rgba(250,81,30,0.7);
+    background: #fab73ad5;
     max-height: 300px;
     padding: 1%;
 }
@@ -135,15 +132,21 @@ article:hover {
 #weather-tiles i {
     margin-top: 7%;
     font-size: 400%;
-    color: rgba(41, 33, 33, 0.459);
+    color: rgba(0, 0, 0, 0.582);
 }
 
 
 /* EVENT TILES */
 
+#event-wrap {
+    padding-bottom: 0%;
+    padding-left: 1%;
+}
+
 #events-tile {
-    background: rgba(238,9,121,0.7);
-    max-height: 1000px;
+    background: #bcb985d5;
+    max-height:  100%;
+    margin-bottom: 0%;
 }
 
 img {
@@ -160,6 +163,5 @@ img {
 /* FOOTER */
 
 .footer {
-    background :rgba(250,81,30,0.9);
+    background :#ffd257e5;
 }
-
