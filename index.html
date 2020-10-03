@@ -7,7 +7,12 @@
 
     <!--Bulma-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
-    
+
+    <!-- Bulma Calendar -->
+    <link rel="https://cdn.jsdelivr.net/npm/bulma-calendar@6.0.9/dist/css/bulma-calendar.min.css">
+
+
+
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
@@ -44,7 +49,7 @@
               <div class="columns">
                 <div class="column is-half">
               <form>
-                  <input id="zip-input" class="input is-rounded" type="number" placeholder="Type the zip code here">
+                  <input id="zip-input" class="input is-rounded" type="number" placeholder="ZIP Code">
                 </div>
                 <button id="location-button" class="button is-dark" type="submit"><i class="fas fa-search"></i></button>
               </div>
@@ -55,7 +60,7 @@
               <article id="date-tile" class="tile is-child notification is-danger">
                 <p class="title date-text"><em style="font-weight: 600">When</em> do you wanna go?</p>
                 <p class="subtitle date-text">Pick a date for your outting</p>
-                <input id="data-input" type="date" data-display-mode="inline" data-is-range="true" data-close-on-select="false" class="date-text">
+                <input id="date-input" type="date">
               </article>
               
             </div>
@@ -133,10 +138,8 @@
  <!---Bulma JS-->
   <script src="https://cdn.jsdelivr.net/npm/bulma-calendar@6.0.9/dist/js/bulma-calendar.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  
+  <script src="foodnevents.js"></script>
   <script src="weather.js"></script>
-  <script src="events.js"></script>
-  <script src="yelp.js"></script>
   <script src="script.js"></script>
   </body>
 </html>
