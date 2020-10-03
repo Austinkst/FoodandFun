@@ -131,7 +131,6 @@ p {
 /* WEATHER TILES */
 
 #weather-tiles {
-    background: #a9a677d5;
     min-height:100px;
     max-height: 150px;
     padding: 1%;

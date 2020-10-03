@@ -28,12 +28,12 @@
     </section>
 
 
+    <!-- MAIN BODY-->
     <div id="main-body">  
 
+      <!-- ALL TILES -->
       <div class="tile is-ancestor">
         <div class="tile is-vertical is-8">
-
-          <!-- ALL TILES -->
           <div class="tile">
 
             <div class="tile is-parent is-vertical">
@@ -77,7 +77,7 @@
                 <div id="weather-container" class="is-centered columns is-mobile is-multiline">
 
                     <!-- TEMEPRATURE TILE -->
-                    <div class="column is-one-quarter weather-tile">
+                    <div class="column is-one-third weather-tile">
                       <i class="fas fa-thermometer-half fa-3x"></i>
                       <p class="bd-notification is-primary">
                         <strong>High </strong><span id="temp-high"></span> ºF
@@ -86,27 +86,19 @@
                     </div>
 
                     <!-- CHANGE OF RAIN TILE -->
-                    <div class="column is-one-quarter weather-tile">
+                    <div class="column is-one-third weather-tile">
                       <!-- REPLACE SRC WITH WEATHER ICON URL -->
                       <i class="fas fa-cloud-rain fa-3x"></i>
                       <p class="bd-notification is-primary">
-                        <strong>Chance of Rain</strong> <span id="rain-chance"></span>
+                        <strong>Forecast </strong> <span id="rain-chance"></span>
                       </p>
                     </div>
 
                     <!-- HUMIDITY TILE -->
-                    <div class="column is-one-quarter weather-tile">
+                    <div class="column is-one-third weather-tile">
                       <i class="fas fa-percent fa-3x"></i>
                       <p class="bd-notification is-primary">
-                        <strong>Humidity </strong><span id="hum-chance"></span>
-                      </p>
-                    </div>
-
-                    <!-- UV TILE -->
-                    <div class="column is-one-quarter weather-tile">
-                      <i class="far fa-sun fa-3x"></i>
-                      <p class="bd-notification is-primary">
-                        <strong>UV Index </strong><span id="uv-index"></span>
+                        <strong>Humidity </strong><span id="hum-chance"></span>%
                       </p>
                     </div>
                   
@@ -141,6 +133,8 @@
  <!---Bulma JS-->
   <script src="https://cdn.jsdelivr.net/npm/bulma-calendar@6.0.9/dist/js/bulma-calendar.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
+  <script src="weather.js"></script>
   <script src="events.js"></script>
   <script src="yelp.js"></script>
   <script src="script.js"></script>
