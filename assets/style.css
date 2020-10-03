@@ -44,7 +44,7 @@ p {
 }
 
 #location-tile{
-    background: #fab73ad5;
+    background: #d1b308d5;
 }
 
 /* DATE TILE */
@@ -71,7 +71,7 @@ p {
 }
 
 #food-tile {
-    background: #ffd357d5;
+    background: #bcb985d5;
     overflow: scroll;
     max-height: 400px;
     padding: 2%;
@@ -109,7 +109,7 @@ p {
 /* WEATHER TILES */
 
 #weather-tiles {
-    background: #fab73ad5;
+    background: #d1b308d5;
     max-height: 300px;
     padding: 1%;
 }
@@ -144,7 +144,7 @@ p {
 }
 
 #events-tile {
-    background: #bcb985d5;
+    background: #d1b308d5;
     max-height:  100%;
     margin-bottom: 0%;
 }
@@ -163,5 +163,5 @@ img {
 /* FOOTER */
 
 .footer {
-    background :#ffd257e5;
+    background :#bcb985d5;
 }
