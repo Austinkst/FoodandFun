@@ -1,7 +1,23 @@
+html {
+    height: 100%;
+}
+
+html, body {
+    min-height: 100% !important;
+    height: 100%;
+}
+
+#header, #main-body {
+    flex: 1;
+}
+
 body {
     background-image: url('./images/food-background.jpg');
     font-family: 'Roboto', sans-serif;
     letter-spacing: 0.04rem;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 p {
@@ -10,15 +26,18 @@ p {
 
 /* HEADER */
 
+#header {
+    max-height: 150px;
+}
+
 #header div {
     margin-left: -0.5%;
 }
 
 #header div h1 {
-    color: #afab71;
+    color: #e1ad01d5;
     font-size: 600%;
     font-weight: 300;
-    margin-bottom: -4.5%;
     text-align: left;
 }
 
@@ -37,22 +56,27 @@ p {
     font-weight: 300;
 }
 
+/* TILE COLORS  */
+
+#location-tile, #weather-tiles {
+    background: #a9a677d5;
+}
+
+#date-tile, #events-tile, .footer {
+    background: #e1ad01d5;
+}
+
+#food-tile {
+    background: #9d9965d5;
+}
+
 /* LOCATION TILE */
 
 #location-tile, #date-tile {
-    max-height: 200px;
-}
-
-#location-tile{
-    background: #fab73ad5;
+    height: 200px;
 }
 
 /* DATE TILE */
-
-#date-tile {
-    background: #bcb985d5;
-    min-height: 200px;
-}
 
 #date-tile .subtitle {
     margin-bottom: 2%;
@@ -72,7 +96,6 @@ p {
 }
 
 #food-tile {
-    background: #ffd357d5;
     overflow: scroll;
     max-height: 400px;
     padding: 2%;
@@ -105,38 +128,31 @@ p {
     padding: 0%;
 }
 
-
-
 /* WEATHER TILES */
 
 #weather-tiles {
-    background: #fab73ad5;
-    max-height: 300px;
-    min-height: 150px;
+    background: #a9a677d5;
+    min-height:100px;
+    max-height: 150px;
     padding: 1%;
 }
 
 .weather-tile {
     text-align: center;
-    padding: 0% 1% 1.5% 1%;
+    padding: 1%;
 }
 
 .weather-tile p {
-    margin-top: 4%;
+    margin-bottom: 2%;
     font-size: 115%;
 }
 
-.weather-button {
-    margin-top: 6%;
-
-}
-
 #weather-tiles i {
-    margin-top: 7%;
+    margin-top: 5%;
+    margin-bottom: 3%;
     font-size: 400%;
     color: rgba(0, 0, 0, 0.582);
 }
-
 
 /* EVENT TILES */
 
@@ -146,9 +162,9 @@ p {
 }
 
 #events-tile {
-    background: #bcb985d5;
-    max-height:  100%;
+    max-height:  560px;
     margin-bottom: 0%;
+    overflow: scroll;
 }
 
 img {
@@ -162,8 +178,8 @@ img {
     margin-top: 3%;
 }
 
-/* FOOTER */
+/* FOOTER  */
 
-.footer {
-    background :#ffd257e5;
+footer {
+    height: 250px;
 }
