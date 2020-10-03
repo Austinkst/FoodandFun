@@ -37,21 +37,27 @@ p {
     font-weight: 300;
 }
 
+/* TILE COLORS  */
+
+#location-tile, #weather-tiles {
+    background: #a9a677d5;
+}
+
+#date-tile, #events-tile {
+    background: #e1ad01d5;
+}
+
+#food-tile, .footer {
+    background: #9d9965d5;
+}
+
 /* LOCATION TILE */
 
 #location-tile, #date-tile {
-    max-height: 200px;
-}
-
-#location-tile{
-    background: #d1b308d5;
+    height: 200px;
 }
 
 /* DATE TILE */
-
-#date-tile {
-    background: #bcb985d5;
-}
 
 #date-tile .subtitle {
     margin-bottom: 2%;
@@ -71,7 +77,6 @@ p {
 }
 
 #food-tile {
-    background: #bcb985d5;
     overflow: scroll;
     max-height: 400px;
     padding: 2%;
@@ -104,37 +109,30 @@ p {
     padding: 0%;
 }
 
-
-
 /* WEATHER TILES */
 
 #weather-tiles {
-    background: #d1b308d5;
-    max-height: 300px;
+    background: #a9a677d5;
+    height: 150px;
     padding: 1%;
 }
 
 .weather-tile {
     text-align: center;
-    padding: 0% 1% 1.5% 1%;
+    padding: 1%;
 }
 
 .weather-tile p {
-    margin-top: 4%;
+    margin-bottom: 2%;
     font-size: 115%;
 }
 
-.weather-button {
-    margin-top: 6%;
-
-}
-
 #weather-tiles i {
-    margin-top: 7%;
+    margin-top: 5%;
+    margin-bottom: 3%;
     font-size: 400%;
     color: rgba(0, 0, 0, 0.582);
 }
-
 
 /* EVENT TILES */
 
@@ -144,9 +142,9 @@ p {
 }
 
 #events-tile {
-    background: #d1b308d5;
-    max-height:  100%;
+    max-height:  600px;
     margin-bottom: 0%;
+    overflow: scroll;
 }
 
 img {
@@ -158,10 +156,4 @@ img {
 
 #location-button {
     margin-top: 3%;
-}
-
-/* FOOTER */
-
-.footer {
-    background :#bcb985d5;
 }
