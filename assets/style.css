@@ -51,6 +51,7 @@ p {
 
 #date-tile {
     background: #bcb985d5;
+    min-height: 200px;
 }
 
 #date-tile .subtitle {
@@ -58,7 +59,7 @@ p {
     font-weight: 300;
 }
 
-#data-input {
+#date-input {
     border: none;
     padding: 1%;
     margin: 1%;
@@ -111,6 +112,7 @@ p {
 #weather-tiles {
     background: #fab73ad5;
     max-height: 300px;
+    min-height: 150px;
     padding: 1%;
 }
 
