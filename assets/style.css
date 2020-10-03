@@ -167,6 +167,18 @@ p {
     overflow: scroll;
 }
 
+.event-name {
+    font-size: 125% !important;
+}
+
+.event-venue {
+    font-size: 100% !important;
+}
+
+.event-address {
+    font-size: 100% !important;
+}
+
 img {
     height: 50%;
     max-width: 50%;

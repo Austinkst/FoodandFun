@@ -1,29 +1,26 @@
 $(document).ready(function () {
   
-  var stateCity = ""; //`&state=${(response.businesses[0].location.state)}&city=${(response.businesses[0].location.city)}`;
+  var stateCity = "";
   var dateSelected ="";
 
   function yelAPI(zip) {
-    var zip = zip;
     var yelpKey= "ohHuWoT7Lxdl4ivpbDqSxQiXNJRz3l3OdZI3TtuoYQo0df5GNf9pR0rLNcQgyxl-2_fShCwRni0jaM5IlAMB26MYEUYymvu1PWU8XP5snst-bWGSQTsb8dK12UdtX3Yx";
-    
-    
     var queryURL = `https://cors-anywhere.herokuapp.com/api.yelp.com/v3/businesses/search?categories=foodTruckInfos&location=${(zip)}`;
-    // var queryURL = 'https://cors-anywhere.herokuapp.com/api.yelp.com/v3/businesses/search?categories=foodTruckInfos&locale=23237';
-    // var queryURL = 'https://cors-anywhere.herokuapp.com/api.yelp.com/v3/businesses/search?categories=foodTruckInfos&latitude=37.569796&longitude=-77.473891';
-    //https://www.yelp.com/search/snippet?find_desc=&find_loc=23237&parent_request_id=044f2ddc24430a7d&request_origin=user 
     
+    // console.log("IN YELP")
     $.ajax({
       url: queryURL,
       headers: {'Authorization': 'Bearer '+yelpKey},
       method: 'GET',
     }).then(function (response) {
       
-      console.log('');
-      console.log('    YELP API RESPONSE    ');
-      console.log(response);
+      // console.log('');
+      // console.log('    YELP API RESPONSE    ');
+      // console.log(queryURL);
+      // console.log(response);
       
       stateCity = `&state=${(response.businesses[0].location.state)}&city=${(response.businesses[0].location.city)}`;
+      // console.log(stateCity);
 
       var fContainer = $("#food-container").addClass("columns is-multiline is-mobile");
       fContainer.empty();
@@ -62,17 +59,16 @@ $(document).ready(function () {
         fContainer.append(foodTruckInfo, foodTruckImage);
 
       };
-
-      // ticketMaster(stateCity);
-      // ticketMaster();
-
-
     });
   };
 
 
   function ticketMaster (){
-    // http://production.shippingapis.com/ShippingAPI.dll?API=CityStateLookup&XML=<CityStateLookupRequest USERID="xxxxxxx"><ZipCode ID= "0"><Zip5>90210</Zip5></ZipCode></CityStateLookupRequest>
+    // Default to Richmond, VA is no city state is returned
+    if (stateCity==""){
+      stateCity = `&state=VA&city=Richmond`;
+      console.log("Using default state+city");
+    };
 
     var tmAPIKey = "AGkOY0wMobADkzojimRidw5t9aAPnU7k";
     var queryURL = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${(tmAPIKey)}&countryCode=US${(stateCity)}`
@@ -81,10 +77,11 @@ $(document).ready(function () {
     if (dateSelected !=""){
       queryURL += "&startDateTime"+dateSelected+"T00:00:00Z";
     };
-  
-    console.log("stateCity", stateCity);
-    console.log("startDateTime", dateSelected);
-    console.log("Ticketmaster queryURL", queryURL);
+
+    // console.log("");
+    // console.log("stateCity", stateCity);
+    // console.log("startDateTime", dateSelected);
+    // console.log("Ticketmaster queryURL", queryURL);
 
     $.ajax({
       url: queryURL,
@@ -92,76 +89,61 @@ $(document).ready(function () {
     }).then(function (response) {
         var events = response._embedded.events;
     
-      console.log('');
-      console.log("TICKET MASTER");
-      console.log(response);
-      console.log('', response._embedded.events);
+      // console.log('');
+      // console.log("TICKET MASTER");
+      // console.log(response);
+      // console.log('', response._embedded.events);
 
       var eContainer = $("#events-container").addClass("columns is-multiline is-mobile");
       eContainer.empty();
 
       for (var i=0; i<6; i++){
-        console.log("  EVENT  ");
-        console.log("TM Event Name: ", events[i].name);
-        console.log("TM Event URL: ", events[i].url);
-        console.log("TM Event Venue: ", events[i]._embedded.venues[0].name);
-        console.log("TM Event Venue Address: ", events[i]._embedded.venues[0].address.line1);
-        console.log("TM Event Venue URL: ", events[i]._embedded.venues[0].url);
-        console.log("TM Event Image: ", events[i].images[0].url);
-        console.log("");
+        // console.log("  EVENT  ");
+        // console.log("TM Event Name: ", events[i].name);
+        // console.log("TM Event URL: ", events[i].url);
+        // console.log("TM Event Venue: ", events[i]._embedded.venues[0].name);
+        // console.log("TM Event Venue Address: ", events[i]._embedded.venues[0].address.line1);
+        // console.log("TM Event Venue URL: ", events[i]._embedded.venues[0].url);
+        // console.log("TM Event Image: ", events[i].images[0].url);
+        // console.log("");
 
         var eventInfo = $("<div id='event' class='column is-half'>");
         var eName = $("<h2 class='event-name'>").text(events[i].name);
-        var eURL = $(`<h2 class='url'><a href='${(events[i].url)}' target='_blank'>Event Info</a></h2>`);
-        var eVenue = $("<h2 class='event-venue'>").text(events[i]._embedded.venues[0].name);
+        var eURL = $(`<p class='url'><a href='${(events[i].url)}' target='_blank'>Event Info</a></h2>`);
+        var eVenue = $("<h3 class='event-venue'>").text(events[i]._embedded.venues[0].name);
         var eAddress =$("<h2 class='event-address'>").text(events[i]._embedded.venues[0].address.line1);
-        var vURL =  `<h2 class='url'><a href='${(events[i]._embedded.venues[0].url)}' target='_blank'>Venue Info</a></h2>`;
+        var vURL =  `<p class='url'><a href='${(events[i]._embedded.venues[0].url)}' target='_blank'>Venue Info</a></h2>`;
 
         var eventImage = $("<img id='event-image' class='column is-half'>");
         eventImage.attr("src",events[i].images[0].url);
 
         eventInfo.append(eName, eURL, eVenue, eAddress, vURL);
         eContainer.append(eventInfo, eventImage);
-
-
-
       };
-
     });
-
-
   };
 
   /* Event listener for the zip code search butotn */
   $("#location-button").on("click", function(event){
     event.preventDefault();
-
     var zipInput = $("#zip-input").val().trim();
-    
-    $(".date-text").show();
-    $("#date-input").show();
-
 
     yelAPI(zipInput);
-    
   });
 
   /* Event listener for the date picker */
   $("#date-input").on("change", function(event){
-    console.log($(this).val());
     dateSelected= $(this).val();
     ticketMaster();
 
+    $("#weather-container").show();
     $("#food-container").show();
     $("#events-container").show();
   });
 
-
   /* Hide tiles on initial page load */
   function hideTilesInitialLoad(){
     $("#weather-container").hide();
-    $(".date-text").hide();
-    $("#date-input").hide();
     $("#food-container").hide();
     $("#events-container").hide();
   };
