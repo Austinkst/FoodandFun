@@ -1,5 +1,7 @@
 $(document).ready(function () {
   
+  var stateCity = ""; //`&state=${(response.businesses[0].location.state)}&city=${(response.businesses[0].location.city)}`;
+  var dateSelected ="";
 
   function yelAPI(zip) {
     var zip = zip;
@@ -21,7 +23,7 @@ $(document).ready(function () {
       console.log('    YELP API RESPONSE    ');
       console.log(response);
       
-      var stateCity = `&state=${(response.businesses[0].location.state)}&city=${(response.businesses[0].location.city)}`;
+      stateCity = `&state=${(response.businesses[0].location.state)}&city=${(response.businesses[0].location.city)}`;
 
       var fContainer = $("#food-container").addClass("columns is-multiline is-mobile");
       fContainer.empty();
@@ -60,21 +62,28 @@ $(document).ready(function () {
         fContainer.append(foodTruckInfo, foodTruckImage);
 
       };
-      ticketMaster(stateCity);
+
+      // ticketMaster(stateCity);
+      // ticketMaster();
+
+
     });
   };
 
 
-  function ticketMaster (stateCity){
+  function ticketMaster (){
     // http://production.shippingapis.com/ShippingAPI.dll?API=CityStateLookup&XML=<CityStateLookupRequest USERID="xxxxxxx"><ZipCode ID= "0"><Zip5>90210</Zip5></ZipCode></CityStateLookupRequest>
 
-
-    var stateCity = stateCity;
     var tmAPIKey = "AGkOY0wMobADkzojimRidw5t9aAPnU7k";
     var queryURL = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${(tmAPIKey)}&countryCode=US${(stateCity)}`
 
+    // if date is available, add to the query
+    if (dateSelected !=""){
+      queryURL += "&startDateTime"+dateSelected+"T00:00:00Z";
+    };
   
     console.log("stateCity", stateCity);
+    console.log("startDateTime", dateSelected);
     console.log("Ticketmaster queryURL", queryURL);
 
     $.ajax({
@@ -123,16 +132,41 @@ $(document).ready(function () {
 
   };
 
-  //// Event listener for the zip code search butotn \\\\
+  /* Event listener for the zip code search butotn */
   $("#location-button").on("click", function(event){
     event.preventDefault();
 
     var zipInput = $("#zip-input").val().trim();
     
+    $(".date-text").show();
+    $("#date-input").show();
+
+
     yelAPI(zipInput);
     
   });
 
+  /* Event listener for the date picker */
+  $("#date-input").on("change", function(event){
+    console.log($(this).val());
+    dateSelected= $(this).val();
+    ticketMaster();
+
+    $("#food-container").show();
+    $("#events-container").show();
+  });
+
+
+  /* Hide tiles on initial page load */
+  function hideTilesInitialLoad(){
+    $("#weather-container").hide();
+    $(".date-text").hide();
+    $("#date-input").hide();
+    $("#food-container").hide();
+    $("#events-container").hide();
+  };
+
+  hideTilesInitialLoad();
 
 });
 
