@@ -1,7 +1,23 @@
+html {
+    height: 100%;
+}
+
+html, body {
+    min-height: 100% !important;
+    height: 100%;
+}
+
+#header, #main-body {
+    flex: 1;
+}
+
 body {
     background-image: url('./images/food-background.jpg');
     font-family: 'Roboto', sans-serif;
     letter-spacing: 0.04rem;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 p {
@@ -9,6 +25,10 @@ p {
 }
 
 /* HEADER */
+
+#header {
+    max-height: 150px;
+}
 
 #header div {
     margin-left: -0.5%;
@@ -18,7 +38,6 @@ p {
     color: #e1ad01d5;
     font-size: 600%;
     font-weight: 300;
-    margin-bottom: -4.5%;
     text-align: left;
 }
 
@@ -113,7 +132,8 @@ p {
 
 #weather-tiles {
     background: #a9a677d5;
-    height: 150px;
+    min-height:100px;
+    max-height: 150px;
     padding: 1%;
 }
 
@@ -156,4 +176,10 @@ img {
 
 #location-button {
     margin-top: 3%;
+}
+
+/* FOOTER  */
+
+footer {
+    height: 250px;
 }
