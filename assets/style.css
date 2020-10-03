@@ -15,7 +15,7 @@ p {
 }
 
 #header div h1 {
-    color: #afab71;
+    color: #e1ad01d5;
     font-size: 600%;
     font-weight: 300;
     margin-bottom: -4.5%;
@@ -43,11 +43,11 @@ p {
     background: #a9a677d5;
 }
 
-#date-tile, #events-tile {
+#date-tile, #events-tile, .footer {
     background: #e1ad01d5;
 }
 
-#food-tile, .footer {
+#food-tile {
     background: #9d9965d5;
 }
 
