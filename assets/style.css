@@ -97,6 +97,7 @@ p {
 
 #food-tile {
     overflow: scroll;
+    min-height: 100px;
     max-height: 400px;
     padding: 2%;
 }
@@ -123,6 +124,11 @@ p {
     max-width: 175px;
     margin: 1.5%;
     padding: 0%;
+}
+
+.more-yelp, .more-events {
+    color: #363636;
+    font-weight: 500;
 }
 
 /* WEATHER TILES */
@@ -175,20 +181,27 @@ p {
 
 .event-name {
     font-size: 125% !important;
+    margin-top: -10px !important;
+    margin-bottom: 1px !important;
 }
 
 .event-venue {
     font-size: 100% !important;
+    margin-top: -10px !important;
+    margin-bottom: -15px !important;
 }
 
 .event-address {
     font-size: 100% !important;
+    margin-bottom: 1px !important;
+
 }
 
 img {
     height: 50%;
     max-width: 50%;
 }
+
 
 /* BUTTONS */
 
@@ -200,4 +213,19 @@ img {
 
 footer {
     height: 250px;
+}
+
+
+@media (max-width: 576px){
+    #location-tile, #date-tile {
+        height: 240px;
+    }
+
+    #events-tile {
+        left: 5px;
+    }
+
+    footer {
+        margin-top: 15px;
+    }
 }
