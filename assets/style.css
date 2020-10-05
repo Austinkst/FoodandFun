@@ -128,30 +128,36 @@ p {
 /* WEATHER TILES */
 
 #weather-tiles {
-    min-height:100px;
-    max-height: 150px;
-    padding: 1%;
+    min-height: 200px;
 }
 
-.weather-tile {
-    text-align: center;
-    padding: 1%;
+#weather-container {
+    justify-content: space-around;
+    padding: 0.5% 0% 0.5% 0%;
 }
 
-.weather-tile p {
-    margin-bottom: 2%;
-    font-size: 115%;
+.card {
+    background: #a9a677;
+    max-width: 180px;
+    max-height: 220px;
+    margin: 0.5%;
+    padding: 0.1%;
+    border-radius: 3%;
 }
 
-#weather-tiles i {
-    margin-top: 5%;
-    margin-bottom: 3%;
-    font-size: 400%;
-    color: rgba(0, 0, 0, 0.582);
-} 
+.weather-icon {
+    max-width: 100px;
+    margin: 0 auto;
+    padding: 0% 0% 0.5% 0%;
+}
 
-img {
-    margin-top: 2%;
+.card-content {
+    padding-top: 0%;
+    margin: 0 auto;
+}
+
+.card-content p {
+    font-size: 80%;
 }
 
 /* EVENT TILES */
@@ -162,7 +168,7 @@ img {
 }
 
 #events-tile {
-    max-height:  560px;
+    max-height: 560px;
     margin-bottom: 0%;
     overflow: scroll;
 }

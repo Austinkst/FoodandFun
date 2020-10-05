@@ -131,7 +131,7 @@ $(document).ready(function () {
     var zipInput = $("#zip-input").val().trim();
 
     yelAPI(zipInput);
-    weatherData();
+    weatherData()
   });
 
   /* Event listener for the date picker */

@@ -33,14 +33,15 @@ function weatherData() {
         <div class="card">
           <div class="card-image">
             <figure class="image is-4by3">
-              <img id="weather-icon" src="https://openweathermap.org/img/wn/${forecast.daily[i].weather[0].icon}@2x.png" alt="Placeholder image">
+              <img class="weather-icon" src="https://openweathermap.org/img/wn/${forecast.daily[i].weather[0].icon}@2x.png" alt="Placeholder image">
             </figure>
           </div>
           <div class="card-content">
-            <p class="bd-notification is-primary">${moment().add(i, 'days').format('MMM Do')}</p>
-            <p class="bd-notification is-primary">${forecast.daily[i].weather[0].description}</p>
-            <p class="bd-notification is-primary">High ${forecast.daily[i].temp.max}ºF| Low ${forecast.daily[i].temp.min}ºF</p>
-            <p class="bd-notification is-primary">${forecast.daily[i].humidity}%</p>
+            <p class="bd-notification is-primary"><strong>${moment().add(i, 'days').format('MMM Do')}</strong></p>
+            <p class="bd-notification is-primary"><em>${forecast.daily[i].weather[0].description}</em></p>
+            <p class="bd-notification is-primary"><strong>High</strong> ${forecast.daily[i].temp.max}ºF</p>
+            <p class="bd-notification is-primary"><strong>Low</strong> ${forecast.daily[i].temp.min}ºF</p>
+            
           </div>
         </div>`);
 
