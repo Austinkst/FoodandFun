@@ -26,7 +26,6 @@ body {
 
 #main-body {
     max-height: 75%;
-    margin-bottom: 3%;
 }
 
 p {
@@ -50,6 +49,18 @@ p {
     text-align: left;
 }
 
+/* INPUT */
+
+#zip-input {
+    width: 75%;
+}
+
+#location-button {
+    width: 20%;
+    margin-left: 2%;
+    margin-top: 0% !important    
+}
+
 /* TILES */
 
 .tile .is-child{
@@ -63,7 +74,6 @@ p {
 #where-and-when {
     padding-left: 0%;
 }
-
 
 .title {
     font-weight: 300;
@@ -225,15 +235,50 @@ footer {
 
 
 @media (max-width: 576px){
-    #location-tile, #date-tile {
-        height: 240px;
+
+    #header {
+        max-height: 15%;
     }
 
-    #events-tile {
-        left: 5px;
+    #main-body {
+        margin: 5%;
     }
+
+    /* TILES */
+
+    #weather-container {
+        overflow: auto;
+    }
+
+    .card {
+        min-width: 70px;
+        max-height: 70px;
+        margin: 2%;
+        padding: 0.5%;
+        text-align: center;
+        border-radius: 10%;
+    }
+
+    .card-content {
+        padding: 0%;
+    }
+
+    .weather-copy {
+        display: none;
+    }
+
+    #food-wrap {
+        padding-left: 0;
+    }
+
+    .tile {
+        min-height: 100px;  
+    }
+
+    /* FOOTER */
 
     footer {
-        margin-top: 15px;
+        display: none;
     }
+
 }

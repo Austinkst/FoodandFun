@@ -38,10 +38,10 @@ function weatherData() {
           </div>
           <div class="card-content">
             <p class="bd-notification is-primary"><strong>${moment().add(i, 'days').format('MMM Do')}</strong></p>
-            <p class="bd-notification is-primary"><em>${forecast.daily[i].weather[0].description}</em></p>
+            <p class="weather-copy bd-notification is-primary"><em>${forecast.daily[i].weather[0].description}</em></p>
             <br>
-            <p class="bd-notification is-primary"><strong>High</strong> ${Math.round(forecast.daily[i].temp.max)}ºF</p>
-            <p class="bd-notification is-primary"><strong>Low</strong> ${Math.round(forecast.daily[i].temp.min)}ºF</p>
+            <p class="weather-copy bd-notification is-primary"><strong>High</strong> ${Math.round(forecast.daily[i].temp.max)}ºF</p>
+            <p class="weather-copy bd-notification is-primary"><strong>Low</strong> ${Math.round(forecast.daily[i].temp.min)}ºF</p>
             
           </div>
         </div>`);
