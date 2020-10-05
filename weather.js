@@ -2,11 +2,11 @@
 function weatherData() {
 
   $("#weather-container").show();
+  $("#weather-container").empty();
 
   var zipCode = $("#zip-input").val();
   var apiKey = '77876012ad238b72189989cbc66caa6a';
   var queryURL = `https://api.openweathermap.org/data/2.5/forecast?zip=${zipCode},us&units=imperial&appid=${apiKey}`;
-  console.log(zipCode);
 
   $.ajax({
       url: queryURL,
@@ -15,14 +15,38 @@ function weatherData() {
 
     console.log(response);
 
-    $("#temp-high").text(response.list[0].main.temp_max);
-    $("#temp-low").text(response.list[0].main.temp_min);
+    var lat = response.city.coord.lat;
+    var lon = response.city.coord.lon;
 
-    $("#weather-icon").attr("src", `https://openweathermap.org/img/wn/${response.list[0].weather[0].icon}@2x.png`)
-    $("#rain-chance").text(response.list[0].weather[0].description);
+    var dailyURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=hourly,minutely&units=imperial&appid=${apiKey}`
 
-    $("#hum-chance").text(response.list[0].main.humidity);
+    $.ajax({
+      url: dailyURL,
+      method: "GET"
+    }).then(function(forecast){
 
+      console.log(forecast);
+      // WEEK'S FORECAST
+      for (i=0; i < 7; i++) {
+
+        $("#weather-container").append(`
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img id="weather-icon" src="https://openweathermap.org/img/wn/${forecast.daily[i].weather[0].icon}@2x.png" alt="Placeholder image">
+            </figure>
+          </div>
+          <div class="card-content">
+            <p class="bd-notification is-primary">${moment().add(i, 'days').format('MMM Do')}</p>
+            <p class="bd-notification is-primary">${forecast.daily[i].weather[0].description}</p>
+            <p class="bd-notification is-primary">High ${forecast.daily[i].temp.max}ºF| Low ${forecast.daily[i].temp.min}ºF</p>
+            <p class="bd-notification is-primary">${forecast.daily[i].humidity}%</p>
+          </div>
+        </div>`);
+
+      }
+
+    })
   })
 }
         
