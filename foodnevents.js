@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  
+  var zipInput = "";
   var stateCity = "";
   var dateSelected ="";
 
@@ -7,7 +7,7 @@ $(document).ready(function () {
 
   function yelAPI(zip) {
     var yelpKey= "ohHuWoT7Lxdl4ivpbDqSxQiXNJRz3l3OdZI3TtuoYQo0df5GNf9pR0rLNcQgyxl-2_fShCwRni0jaM5IlAMB26MYEUYymvu1PWU8XP5snst-bWGSQTsb8dK12UdtX3Yx";
-    var queryURL = `https://cors-anywhere.herokuapp.com/api.yelp.com/v3/businesses/search?categories=foodTruckInfos&location=${(zip)}`;
+    var queryURL = `https://cors-anywhere.herokuapp.com/api.yelp.com/v3/businesses/search?location=${(zip)}`;
     
     // console.log("IN YELP")
     $.ajax({
@@ -61,6 +61,9 @@ $(document).ready(function () {
         fContainer.append(foodTruckInfo, foodTruckImage);
 
       };
+
+      var fMoreYelp = $(`<p class='url more-yelp'><a href='https://www.yelp.com/search?find_desc=&find_loc=${(zipInput)}' target="_blank">More Restaurants on Yelp</a></p>`);
+      fContainer.append(fMoreYelp);
     });
   };
 
@@ -69,21 +72,16 @@ $(document).ready(function () {
     // Default to Richmond, VA is no city state is returned
     if (stateCity==""){
       stateCity = `&state=VA&city=Richmond`;
-      console.log("Using default state+city");
+      console.log("Using default City and State: Richmond,VA");
     };
-
+    
     var tmAPIKey = "AGkOY0wMobADkzojimRidw5t9aAPnU7k";
-    var queryURL = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${(tmAPIKey)}&countryCode=US${(stateCity)}`
+    var queryURL = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${(tmAPIKey)}&countryCode=US${(stateCity)}&startDateTime=${(dateSelected)}T01:00:00Z`
 
-    // if date is available, add to the query
-    if (dateSelected !=""){
-      queryURL += "&startDateTime"+dateSelected+"T00:00:00Z";
-    };
-
-    // console.log("");
-    // console.log("stateCity", stateCity);
-    // console.log("startDateTime", dateSelected);
-    // console.log("Ticketmaster queryURL", queryURL);
+    console.log("");
+    console.log("stateCity", stateCity);
+    console.log("startDateTime", dateSelected);
+    console.log("Ticketmaster queryURL", queryURL);
 
     $.ajax({
       url: queryURL,
@@ -113,7 +111,7 @@ $(document).ready(function () {
         var eName = $("<h2 class='event-name'>").text(events[i].name);
         var eURL = $(`<p class='url'><a href='${(events[i].url)}' target='_blank'>Event Info</a></h2>`);
         var eVenue = $("<h3 class='event-venue'>").text(events[i]._embedded.venues[0].name);
-        var eAddress =$("<h2 class='event-address'>").text(events[i]._embedded.venues[0].address.line1);
+        var eAddress =$("<h3 class='event-address'>").text(events[i]._embedded.venues[0].address.line1);
         var vURL =  `<p class='url'><a href='${(events[i]._embedded.venues[0].url)}' target='_blank'>Venue Info</a></h2>`;
 
         var eventImage = $("<img id='event-image' class='column is-half'>");
@@ -122,13 +120,17 @@ $(document).ready(function () {
         eventInfo.append(eName, eURL, eVenue, eAddress, vURL);
         eContainer.append(eventInfo, eventImage);
       };
+
+      var fMoreEvents = $(`<p class='url more-events'><a href='https://www.ticketmaster.com' target="_blank">More Events on ticketmaster</a></p>`);
+      eContainer.append(fMoreEvents);
+
     });
   };
 
   /* Event listener for the zip code search butotn */
   $("#location-button").on("click", function(event){
     event.preventDefault();
-    var zipInput = $("#zip-input").val().trim();
+    zipInput = $("#zip-input").val().trim();
 
     yelAPI(zipInput);
     weatherData();
