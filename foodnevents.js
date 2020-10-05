@@ -4,7 +4,6 @@ $(document).ready(function () {
   var dateSelected ="";
 
   function yelAPI(zip) {
-    var zip = zip;
     var yelpKey= "ohHuWoT7Lxdl4ivpbDqSxQiXNJRz3l3OdZI3TtuoYQo0df5GNf9pR0rLNcQgyxl-2_fShCwRni0jaM5IlAMB26MYEUYymvu1PWU8XP5snst-bWGSQTsb8dK12UdtX3Yx";
     
     

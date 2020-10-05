@@ -109,6 +109,8 @@ p {
 .image-url {
     max-width: 90%;
     height: auto;
+    border-radius: 3%;
+    padding: 0%;
 }
 
 .truck-name {
@@ -120,11 +122,6 @@ p {
 #food-truck-image{
     max-width: 175px;
     margin: 1.5%;
-    padding: 0%;
-}
-
-.image-url {
-    border-radius: 3%;
     padding: 0%;
 }
 
@@ -151,6 +148,10 @@ p {
     margin-bottom: 3%;
     font-size: 400%;
     color: rgba(0, 0, 0, 0.582);
+} 
+
+img {
+    margin-top: 2%;
 }
 
 /* EVENT TILES */

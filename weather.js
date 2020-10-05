@@ -21,6 +21,7 @@ $(document).ready(function() {
       $("#temp-high").text(response.list[0].main.temp_max);
       $("#temp-low").text(response.list[0].main.temp_min);
 
+      $("#weather-icon").attr("src", `http://openweathermap.org/img/wn/${response.list[0].weather[0].icon}@2x.png`)
       $("#rain-chance").text(response.list[0].weather[0].description);
 
       $("#hum-chance").text(response.list[0].main.humidity);
