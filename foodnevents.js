@@ -3,6 +3,8 @@ $(document).ready(function () {
   var stateCity = "";
   var dateSelected ="";
 
+  $("#weather-container").hide();
+
   function yelAPI(zip) {
     var yelpKey= "ohHuWoT7Lxdl4ivpbDqSxQiXNJRz3l3OdZI3TtuoYQo0df5GNf9pR0rLNcQgyxl-2_fShCwRni0jaM5IlAMB26MYEUYymvu1PWU8XP5snst-bWGSQTsb8dK12UdtX3Yx";
     var queryURL = `https://cors-anywhere.herokuapp.com/api.yelp.com/v3/businesses/search?categories=foodTruckInfos&location=${(zip)}`;
@@ -129,6 +131,7 @@ $(document).ready(function () {
     var zipInput = $("#zip-input").val().trim();
 
     yelAPI(zipInput);
+    weatherData();
   });
 
   /* Event listener for the date picker */
