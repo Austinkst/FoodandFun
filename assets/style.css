@@ -1,4 +1,5 @@
 html {
+    background-image: url('./images/food-background.jpg');
     height: 100%;
 }
 
@@ -12,7 +13,6 @@ html, body {
 }
 
 body {
-    background-image: url('./images/food-background.jpg');
     font-family: 'Roboto', sans-serif;
     letter-spacing: 0.04rem;
     display: flex;
@@ -49,6 +49,10 @@ p {
 
 #main-body, #header {
     padding: 2%;
+}
+
+#where-and-when {
+    padding-left: 0%;
 }
 
 
@@ -133,26 +137,21 @@ p {
 
 /* WEATHER TILES */
 
-#weather-tiles {
-    min-height: 200px;
-}
-
 #weather-container {
     justify-content: space-around;
     padding: 0.5% 0% 0.5% 0%;
 }
 
 .card {
+    max-width: 13%;
     background: #a9a677;
-    max-width: 180px;
-    max-height: 220px;
-    margin: 0.5%;
     padding: 0.1%;
     border-radius: 3%;
+    align-items: baseline;
 }
 
 .weather-icon {
-    max-width: 100px;
+    min-width: 75%;
     margin: 0 auto;
     padding: 0% 0% 0.5% 0%;
 }
@@ -171,10 +170,10 @@ p {
 #event-wrap {
     padding-bottom: 0%;
     padding-left: 1%;
+    max-height: 620px;
 }
 
 #events-tile {
-    max-height: 560px;
     margin-bottom: 0%;
     overflow: scroll;
 }
