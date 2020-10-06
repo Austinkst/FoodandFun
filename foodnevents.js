@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  
+  var zipInput="";
   var stateCity = "";
   var dateSelected ="";
 
