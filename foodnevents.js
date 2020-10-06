@@ -6,6 +6,7 @@ $(document).ready(function () {
   $("#weather-container").hide();
 
   function yelAPI(zip) {
+    $("#food-container").empty(); 
     var yelpKey= "ohHuWoT7Lxdl4ivpbDqSxQiXNJRz3l3OdZI3TtuoYQo0df5GNf9pR0rLNcQgyxl-2_fShCwRni0jaM5IlAMB26MYEUYymvu1PWU8XP5snst-bWGSQTsb8dK12UdtX3Yx";
     var queryURL = `https://cors-anywhere.herokuapp.com/api.yelp.com/v3/businesses/search?location=${(zip)}`;
     
@@ -16,12 +17,12 @@ $(document).ready(function () {
       method: 'GET',
     }).then(function (response) {
       
-      // console.log('');
-      // console.log('    YELP API RESPONSE    ');
+      console.log('');
+      console.log('    YELP API RESPONSE    ');
       // console.log(queryURL);
-      // console.log(response);
+      console.log(response);
       
-      stateCity = `&state=${(response.businesses[0].location.state)}&city=${(response.businesses[0].location.city)}`;
+      stateCity = `&stateCode=${(response.businesses[0].location.state)}&city=${(response.businesses[0].location.city)}`;
       // console.log(stateCity);
 
       var fContainer = $("#food-container").addClass("columns is-multiline is-mobile");
@@ -43,7 +44,7 @@ $(document).ready(function () {
         var foodTruckImage = $("<div id='food-truck-image' class='column is-half'>");
 
         var fPrice = response.businesses[i].price;
-        if (fPrice=='undefined'){
+        if (fPrice == 'undefined' || typeof fPrice == 'undefined'){
           fPrice='';
         };
  
@@ -72,9 +73,11 @@ $(document).ready(function () {
     // Default to Richmond, VA is no city state is returned
     if (stateCity==""){
       stateCity = `&state=VA&city=Richmond`;
-      console.log("Using default City and State: Richmond,VA");
+      console.log("Using default City and State for events: Richmond,VA");
     };
     
+    $("#events-container").empty();
+
     var tmAPIKey = "AGkOY0wMobADkzojimRidw5t9aAPnU7k";
     var queryURL = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${(tmAPIKey)}&countryCode=US${(stateCity)}&startDateTime=${(dateSelected)}T01:00:00Z`
 
@@ -87,15 +90,24 @@ $(document).ready(function () {
       url: queryURL,
       method: 'GET',
     }).then(function (response) {
-        var events = response._embedded.events;
-    
-      // console.log('');
-      // console.log("TICKET MASTER");
-      // console.log(response);
-      // console.log('', response._embedded.events);
-
+      
+      console.log("");
+      console.log("TICKET MASTER");
+      console.log(" response", response);
+      
+      
+      if (typeof response._embedded == 'undefined'){
+        console.log("There are no results for the entered ZIP Code.");
+        console.log(typeof response._embedded);
+        $("#events-container").append(`<p class='url no-events'><a href='https://www.ticketmaster.com' target='_blank'>No events found for 
+        the specific ZIP Code entered. Please search on ticketmaster</a></p>`);
+        return
+      };
+      
+      var events = response._embedded.events;
       var eContainer = $("#events-container").addClass("columns is-multiline is-mobile");
-      eContainer.empty();
+      console.log(" response._embedded.events", response._embedded.events);
+      
 
       for (var i=0; i<6; i++){
         // console.log("  EVENT  ");
@@ -112,7 +124,7 @@ $(document).ready(function () {
         var eURL = $(`<p class='url'><a href='${(events[i].url)}' target='_blank'>Event Info</a></h2>`);
         var eVenue = $("<h3 class='event-venue'>").text(events[i]._embedded.venues[0].name);
         var eAddress =$("<h3 class='event-address'>").text(events[i]._embedded.venues[0].address.line1);
-        var vURL =  `<p class='url'><a href='${(events[i]._embedded.venues[0].url)}' target='_blank'>Venue Info</a></h2>`;
+        var vURL =  `<p class='url'><a href='${(events[i]._embedded.venues[0].url)}' target='_blank'>Venue Info</a></p>`;
 
         var eventImage = $("<img id='event-image' class='column is-half'>");
         eventImage.attr("src",events[i].images[0].url);
@@ -132,6 +144,13 @@ $(document).ready(function () {
     event.preventDefault();
     zipInput = $("#zip-input").val().trim();
 
+    $(".date-text").show();
+    $(".date-input").show();
+    $("#date-input").show();
+    $("#date-input").val(null);
+    $("#food-container").hide();
+    $("#events-container").hide();
+
     yelAPI(zipInput);
     weatherData()
   });
@@ -148,9 +167,11 @@ $(document).ready(function () {
 
   /* Hide tiles on initial page load */
   function hideTilesInitialLoad(){
+    $(".date-text").hide();
+    $(".date-input").hide();
+    $("#date-input").hide();
     $("#weather-container").hide();
     $("#food-container").hide();
-    $("#events-container").hide();
   };
 
   hideTilesInitialLoad();
