@@ -160,7 +160,7 @@ form {
     padding: 0%;
 }
 
-.more-yelp, .more-events {
+.more-yelp, .more-events, .no-events {
     color: #363636;
     font-weight: 500;
 }
