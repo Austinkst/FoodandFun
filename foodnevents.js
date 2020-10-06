@@ -3,10 +3,10 @@ $(document).ready(function () {
   var stateCity = "";
   var dateSelected ="";
 
-  function yelAPI(zip) {
+  function yelAPI() {
     $("#food-container").empty(); 
     var yelpKey= "ohHuWoT7Lxdl4ivpbDqSxQiXNJRz3l3OdZI3TtuoYQo0df5GNf9pR0rLNcQgyxl-2_fShCwRni0jaM5IlAMB26MYEUYymvu1PWU8XP5snst-bWGSQTsb8dK12UdtX3Yx";
-    var queryURL = `https://cors-anywhere.herokuapp.com/api.yelp.com/v3/businesses/search?categories=foodTruckInfos&location=${(zip)}`;
+    var queryURL = `https://cors-anywhere.herokuapp.com/api.yelp.com/v3/businesses/search?location=${(zipInput)}`;
     
     $.ajax({
       url: queryURL,
@@ -56,11 +56,6 @@ $(document).ready(function () {
       queryURL += "&startDateTime"+dateSelected+"T00:00:00Z";
     };
 
-    // console.log("");
-    // console.log("stateCity", stateCity);
-    // console.log("startDateTime", dateSelected);
-    // console.log("Ticketmaster queryURL", queryURL);
-
     $.ajax({
       url: queryURL,
       method: 'GET',
@@ -96,7 +91,7 @@ $(document).ready(function () {
   /* Event listener for the zip code search butotn */
   $("#location-button").on("click", function(event){
     event.preventDefault();
-    var zipInput = $("#zip-input").val().trim();
+    zipInput = $("#zip-input").val().trim();
 
     $(".date-text").show();
     $(".date-input").show();
@@ -105,7 +100,7 @@ $(document).ready(function () {
     $("#food-container").hide();
     $("#events-container").hide();
 
-    yelAPI(zipInput);
+    yelAPI();
     weatherData()
   });
 
