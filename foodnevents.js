@@ -16,36 +16,28 @@ $(document).ready(function () {
       method: 'GET',
     }).then(function (response) {
       stateCity = `&stateCode=${(response.businesses[0].location.state)}&city=${(response.businesses[0].location.city)}`;
-
-      var fContainer = $("#food-container").addClass("columns is-multiline is-mobile");
-      fContainer.empty();
-
-      for (var i=0; i < 6; i++) {        
-        var foodTruckInfo = $("<div id='food-truck' class='column is-half'>");
-        var foodTruckImage = $("<div id='food-truck-image' class='column is-half'>");
-
+      
+      for (var i=0; i < 6; i++) {     
         var fPrice = response.businesses[i].price;
         if (fPrice == 'undefined' || typeof fPrice == 'undefined'){
           fPrice='';
         };
- 
-        var fName = $("<h2 class='truck-name'>").text(response.businesses[i].name + " "+fPrice);
-        var fDPhone = $("<h2 class='display-phone'>").text(response.businesses[i].display_phone);
-        var fRating = $(`<i class="fas fa-star">  ${(response.businesses[i].rating)}</i>`);
-        var fURL = $(`<h2 class='url'><a href='${(response.businesses[i].url)}' target="_blank">Look on Yelp</a></h2>`);
         
-        var fImage = $("<img class='image-url'>");
-        fImage.attr("src",response.businesses[i].image_url);
+        $("#food-container").append(`
+        <div id='food-truck' class='column is-half'>
+          <h2 class='truck-name'>${(response.businesses[i].name + " "+fPrice)}</h2>
+          <h2 class='display-phone'>${(response.businesses[i].display_phone)}</h2>
+          <i class="fas fa-star">  ${(response.businesses[i].rating)}</i>
+          <h2 class='url'><a href='${(response.businesses[i].url)}' target="_blank">Look on Yelp</a></h2>
+        </div>
 
-        foodTruckInfo.append(fName, fDPhone, fRating, fURL, fImage);
-        foodTruckImage.append(fImage);
-
-        fContainer.append(foodTruckInfo, foodTruckImage);
-
+        <div id='food-truck-image' class='column is-half'>
+          <img class='image-url' alt='restaurnat${(i)}' src='${(response.businesses[i].image_url)}'>
+        </div>
+          `);
       };
 
-      var fMoreYelp = $(`<p class='url more-yelp'><a href='https://www.yelp.com/search?find_desc=&find_loc=${(zipInput)}' target="_blank">More Restaurants on Yelp</a></p>`);
-      fContainer.append(fMoreYelp);
+      $("#food-container").append(`<p class='url more-yelp'><a href='https://www.yelp.com/search?find_desc=&find_loc=${(zipInput)}' target="_blank">More Restaurants on Yelp</a></p>`);
     });
   };
 
@@ -76,20 +68,20 @@ $(document).ready(function () {
       var eContainer = $("#events-container").addClass("columns is-multiline is-mobile");
       
       for (var i=0; i<6; i++){
-        var eventInfo = $("<div id='event' class='column is-half'>");
-        var eName = $("<h2 class='event-name'>").text(events[i].name);
-        var eURL = $(`<p class='url'><a href='${(events[i].url)}' target='_blank'>Event Info</a></h2>`);
-        var eVenue = $("<h3 class='event-venue'>").text(events[i]._embedded.venues[0].name);
-        var eAddress =$("<h3 class='event-address'>").text(events[i]._embedded.venues[0].address.line1);
-        var vURL =  `<p class='url'><a href='${(events[i]._embedded.venues[0].url)}' target='_blank'>Venue Info</a></p>`;
-        var eventImage = $("<img id='event-image' class='column is-half'>");
-        eventImage.attr("src",events[i].images[0].url);
-        eventInfo.append(eName, eURL, eVenue, eAddress, vURL);
-        eContainer.append(eventInfo, eventImage);
+        $("#events-container").append(`
+        <div id='event' class='column is-half'>
+          <h2 class='event-name'>${(events[i].name)}</h2>
+          <p class='url'><a href='${(events[i].url)}' target='_blank'>Event Info</a></p>
+          <h3 class='event-venue'>${(events[i]._embedded.venues[0].name)}</h3>
+          <h3 class='event-address'>${(events[i]._embedded.venues[0].address.line1)}</h3>
+          <p class='url'><a href='${(events[i]._embedded.venues[0].url)}' target='_blank'>Venue Info</a></p>
+        </div>
+          
+          <img id='event-image' class='column is-half' alt='event${(i)}' src='${(events[i].images[0].url)}'>
+        `);
       };
 
-      var fMoreEvents = $(`<p class='url more-events'><a href='https://www.ticketmaster.com' target="_blank">More Events on ticketmaster</a></p>`);
-      eContainer.append(fMoreEvents);
+      $("#events-container").append(`<p class='url more-events'><a href='https://www.ticketmaster.com' target="_blank">More Events on ticketmaster</a></p>`);
     });
   };
 
