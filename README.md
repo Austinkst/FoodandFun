@@ -13,9 +13,12 @@ The landing page displays a ZIP Code input field. Once the user enters a zip cod
 Similar to the Food Tile, the Events Tile displays 5 local ticketmaster events. Each event displays the event name, link to the event, location, and link to the venue in case you want see what other events are at the venue. It also provides a link to ticketmaster at the end of the list in case the user wants to search for more events. If no events are found for the ZIP Code entered, a message is displayed and a link to ticketmaster is provided.
 
 Desktop View
+
 ![Food&Fun Demo](./assets/Food&Fun.gif)
 
+
 Responsive View
+
 ![Food&Fun Desktop](./assets/Responsive.png)
 
 ## Technologies Used
