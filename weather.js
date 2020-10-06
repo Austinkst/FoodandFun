@@ -1,8 +1,9 @@
 
 function weatherData() {
 
-  $("#weather-container").show();
   $("#weather-container").empty();
+  $("#weather-container").show();
+  $(".date").show();
 
   var zipCode = $("#zip-input").val();
   var apiKey = '77876012ad238b72189989cbc66caa6a';
@@ -36,7 +37,7 @@ function weatherData() {
               <img class="weather-icon" src="https://openweathermap.org/img/wn/${forecast.daily[i].weather[0].icon}@2x.png" alt="Placeholder image">
             </figure>
           </div>
-          
+          <br>
           <div class="card-content">
             <p class="bd-notification is-primary"><strong>${moment().add(i, 'days').format('MMM Do')}</strong></p>
             <p class="weather-copy bd-notification is-primary"><em>${forecast.daily[i].weather[0].description}</em></p>

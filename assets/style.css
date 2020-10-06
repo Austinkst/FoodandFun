@@ -75,6 +75,10 @@ p {
     padding-left: 0%;
 }
 
+form {
+    margin-bottom: 5%;
+}
+
 .title {
     font-weight: 300;
 }
@@ -100,10 +104,14 @@ p {
 /* LOCATION TILE */
 
 #location-tile, #date-tile {
-    height: 30%;
+    height: 33%;
 }
 
 /* DATE TILE */
+
+#date-tile {
+    padding-bottom: 0%;
+}
 
 #date-tile .subtitle {
     margin-bottom: 2%;
@@ -233,7 +241,7 @@ img {
 /* FOOTER  */
 
 footer {
-    max-height: 5%;
+    max-height: 3%;
     margin-top: 3%;
 }
 
