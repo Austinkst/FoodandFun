@@ -13,8 +13,6 @@ function weatherData() {
       method: "GET"
   }).then(function(response){
 
-    // console.log(response);
-
     var lat = response.city.coord.lat;
     var lon = response.city.coord.lon;
 
@@ -25,7 +23,6 @@ function weatherData() {
       method: "GET"
     }).then(function(forecast){
 
-      // console.log(forecast);
       // WEEK'S FORECAST
       for (i=0; i < 7; i++) {
 

@@ -1,33 +1,44 @@
-# Unit 7: Project 1
+# Food&Fun: Project 1
 
 
-Live Link: https://austinkst.github.io/foodtruckRepo
+Live Link: https://austinkst.github.io/FoodandFun/
 
 
-## Overview
-Welcome to Project 1! This is an important step in your full-stack journey as you will now use your newly acquired skills and knowledge to build web application from scratch. With your team, you will conceive and execute a design that solves a real-world problem by integrating data received from multiple server-side API requests. Because you will be working collaboratively, you will learn agile development methodologies and implement feature and bug fixes using the git branch workflow and pull requests.
+## Background
+As a person that loves finding new places to eat, and enjoying music and local events, I need an appplication that can quickly display this information. Introducing Food&Fun. We hope to answer the need for a speedy search and provide a weather forecast for your outing. The applications is responsive and displays perfectly on mobile devices.
 
-## Key Topics
-* Server-side APIs
-* Git branching workflow
-* Agile software development
+## Food&Fun Functionality
+The landing page displays a ZIP Code input field. Once the user enters a zip code for any city in the US, they are presented with a calendar to select a particular date. Once the ZIP Code and date are selected, the user is presented with 5 local restaurants, nearby events, and the weather for the city searched. The Food Tile displays the restaurant name, price range, rating, phone nubmer, and a link to Yelp for more information. In addition, they have the option of searching for more restaurants by clicking the "More Restaurants on Yelp".
 
-## Comprehension Check
-You will be employer-ready if you can answer the following questions:
-1. What is agile software development?
-2. What is an MVP?
-3. If you pull down a teammate's branch and you have merge conflicts, how do you handle it?
+Similar to the Food Tile, the Events Tile displays 5 local ticketmaster events. Each event displays the event name, link to the event, location, and link to the venue in case you want see what other events are at the venue. It also provides a link to ticketmaster at the end of the list in case the user wants to search for more events. If no events are found for the ZIP Code entered, a message is displayed and a link to ticketmaster is provided.
 
-## Learning Objectives
-You will be employer-competitive if you are able to:
-* Speak technically about a feature you implemented in your project
-* Explain and execute git branching workflow in a collaborative project
-* Resolve merge conflicts
-* Explain agile software development
-* Design, build, and deploy a client-side web application using GitHub Pages
-* Prepare a professional presentation and repository README for your project
+Desktop View
+![Food&Fun Demo](./assets/Food&Fun.gif)
 
-## Helpful Links
-* [Agile Methodology](https://en.wikipedia.org/wiki/Agile_software_development)
-* [Git Branching](https://git-scm.com/book/en/v2/Git-Branching-Branching-Workflows)
-* [Learn Enough Git to Be Dangerous](https://www.learnenough.com/git-tutorial/getting_started)
+Responsive View
+![Food&Fun Desktop](./assets/Responsive.png)
+
+## Technologies Used
+### Front-End
+    - Html, CSS, JavaScrtip
+    - Bulma
+    - Google Fonts
+    - Font Awesome
+
+### Back-End
+    - JavaScript
+    - Open Weather API
+    - Yelp API
+    - ticketmaster API
+
+## Team Members
+
+### Front-End
+    - Christine 
+    - Elisabeth
+
+### Back-End
+    - Kelli
+    - Giovanni
+
+
